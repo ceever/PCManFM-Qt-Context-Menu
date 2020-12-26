@@ -1,0 +1,14 @@
+[Desktop Entry]
+Type=Action
+ToolbarLabel=Mount Disk/Image
+Icon=gtk-cdrom
+Name=Mount Disk/Image
+Profiles=profile-pre-v2;
+
+[X-Action-Profile profile-pre-v2]
+SelectionCount==1
+Exec=/usr/share/file-manager/mount.sh %F
+Basenames=*.iso;*.nrg;*.bin;*.img;*.mdf;*.sda;*.sdb;*.sdc;*.sdd;*.sdx;*.sdX
+Matchcase=false
+MimeTypes=all/allfiles;
+Schemes=file;

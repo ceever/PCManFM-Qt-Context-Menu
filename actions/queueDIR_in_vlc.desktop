@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Action
+TargetToolbar=true
+ToolbarLabel=Queue in VLC
+Name=Queue in VLC
+Icon=vlc
+Profiles=foobar;
+
+[X-Action-Profile foobar]
+Exec=vlc %F
+MimeTypes=inode/directory;

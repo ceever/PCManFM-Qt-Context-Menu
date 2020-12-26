@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Action
+TargetToolbar=true
+ToolbarLabel=Compact: ps2pdf
+Name=Compact: ps2pdf
+Icon=pdfeditor
+Profiles=ps2pdf;
+
+[X-Action-Profile ps2pdf]
+Exec=/usr/share/file-manager/ps2pdf.sh %F
+Schemes=file;
+MimeTypes=application/pdf;

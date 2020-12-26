@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Action
+TargetToolbar=true
+ToolbarLabel=Bulk Rename
+Name=Bulk Rename
+Icon=krename
+Profiles=foo;
+
+[X-Action-Profile foo]
+SelectionCount=>1
+Exec=python3 /usr/share/file-manager/bulk_renamer.py %F

@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Action
+TargetToolbar=true
+ToolbarLabel=Rotate: right
+Name=Rotate: right
+Icon=pdfeditor
+Profiles=pdftk;
+
+[X-Action-Profile pdftk]
+Exec=/usr/share/file-manager/pdftk_rotate.sh right %F
+Schemes=file;
+MimeTypes=application/pdf;

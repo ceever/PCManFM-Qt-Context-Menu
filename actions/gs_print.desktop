@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Action
+TargetToolbar=true
+ToolbarLabel=Compact: gs/print
+Name=Compact: gs/print
+Icon=pdfeditor
+Profiles=printer;
+
+[X-Action-Profile printer]
+Exec=/usr/share/file-manager/gs.sh printer %F
+Schemes=file;
+MimeTypes=application/pdf;
