@@ -40,11 +40,11 @@ Send me an email or open a ticket on github.
 ---
 **INSTALLATION:**
 
-Put the relevant *.desktop* files (<a hred="actions/">actions folder</a> above) under (on your system, create if missing):
+Put the relevant *.desktop* files (<a hred="actions/">actions folder</a> above) onto your system (create folder if missing):
 * All users: /usr/share/file-manager/actions/
 * Current user: ~/.local/share/file-manager/actions/
 
-Put the associated scripts (<a hred="scripts/">scripts folder</a> above) under (on your system):
+Put the associated scripts (<a hred="scripts/">scripts folder</a> above) onto your system:
 * All users: /usr/share/file-manager/
 * Current user: ~/.local/share/file-manager/
 
@@ -85,6 +85,9 @@ If not yet installed on your system, install via:
 **"Bulk rename":**
 * The original can be found here: https://github.com/trhura/nautilus-renamer or https://launchpad.net/nautilus-renamer/+download
 * I slightly modified it to have an "Overwrite" option included.
+
+**"PDF ..."/menu.desktop:**
+* This is the *.desktop* file that creates the submenu for PDF treatment and collects all PDF actions.
 
 **FileManager-Actions (tool):**
 * A convenient tool to create context menu actions, in case you are uncomfortable with all the options to put into the *.desktop* (text) file.
