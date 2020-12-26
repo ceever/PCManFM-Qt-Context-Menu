@@ -82,7 +82,7 @@ If not yet installed on your system, install via:
 * These are various ways to make a PDF smaller, with *ps2pdf* being the simplest one.
 * *ps2pdf* seems not to change the dpi of pictures, but simply compresses PDFs.
 * Instead, *gs/print* produces 300 dpi, *gs/ebook* 150 dpi and *gs/ebook/!* 120 dpi.
-* Just try them and take the resulting PDF that best fits your needs.
+* Just try them and take the resulting PDF that best fits your (quality) needs.
 * You can even modify the *print* and *ebook* parameter of gs/ghostscript in the script to have different options or names.
 
 **"Queue in VLC":**
