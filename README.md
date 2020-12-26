@@ -2,7 +2,7 @@
 
 **Various context menus (i.e. right click menus) for LXQT's file manager**
 
-A great Linux distribution: https://lxqt.org/ or https://lubuntu.me/
+Great Linux distribution: https://lxqt.org/ or https://lubuntu.me/ (which use PCManFM-Qt as file manager)
 
 Copyright © 2020 Andrew Jackson (https://github.com/ceever ... ceever@web.de)
 
