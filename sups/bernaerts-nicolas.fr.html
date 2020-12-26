@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en-gb" dir="ltr" class="no-js">
+    <head><script src="//archive.org/includes/analytics.js?v=cf34f82" type="text/javascript"></script>
+<script type="text/javascript">window.addEventListener('DOMContentLoaded',function(){var v=archive_analytics.values;v.service='wb';v.server_name='wwwb-app102.us.archive.org';v.server_ms=439;archive_analytics.send_pageview({});});</script><script type="text/javascript" src="/_static/js/playback.bundle.js?v=SOX25l-I" charset="utf-8"></script>
+<script type="text/javascript" src="/_static/js/wombat.js?v=cRqOKCOw" charset="utf-8"></script>
+<script type="text/javascript">
+  __wm.init("http://bernaerts.dyndns.org:80/linux/76-gnome/344-nautilus-new-document-creation-menu","20180607194738","http://bernaerts.dyndns.org/linux/76-gnome/344-nautilus-new-document-creation-menu"/>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<meta name="keywords" content="linux, ubuntu, gnome, nautilus, create, empty, document, contextual, menu"/>
+	<meta name="author" content="Nicolas Bernaerts"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<meta name="description" content="This article explains how to get back Nautilus create empty document feature, but boosted with steroids. It explains how to setup Nautilus to handle creation of different empty document types, based on some document models you have written and provided. You'll then be able to create any type of new documents customised to your specific need (writer document with your letter head, bash script with your default title block, …)."/>
+	<meta name="generator" content="Joomla! - Open Source Content Management"/>
+	<title>Gnome Shell - Create New Documents from Nautilus contextual menu</title>
+	<link href="http://bernaerts.dyndns.org/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon"/>
+	<link href="http://bernaerts.dyndns.org/component/search/?Itemid=62&amp;catid=76&amp;id=344&amp;format=opensearch" rel="search" title="Search Famille Bernaerts" type="application/opensearchdescription+xml"/>
+	<link href="http://bernaerts.dyndns.org/media/jbtype/css/font-awesome.css" rel="stylesheet" type="text/css" media="screen"/>
+	<link href="http://bernaerts.dyndns.org/plugins/content/autotoc/autotoc.css" rel="stylesheet" type="text/css" media="screen"/>
+	<link href="http://bernaerts.dyndns.org/plugins/content/displayfile/displayfile.css" rel="stylesheet" type="text/css" media="screen"/>
+	<link href="http://bernaerts.dyndns.org/plugins/content/displayconsole/displayconsole.css" rel="stylesheet" type="text/css" media="screen"/>
+	<link href="http://bernaerts.dyndns.org/libraries/expose/interface/css/joomla.css" rel="stylesheet" type="text/css" media="screen"/>
+	<link href="http://bernaerts.dyndns.org/templates/tx_zenith_ii/css/typography.css" rel="stylesheet" type="text/css" media="screen"/>
+	<link href="http://bernaerts.dyndns.org/templates/tx_zenith_ii/css/template.css" rel="stylesheet" type="text/css" media="screen"/>
+	<link href="http://bernaerts.dyndns.org/templates/tx_zenith_ii/css/responsive.css" rel="stylesheet" type="text/css" media="screen"/>
+	<link href="http://bernaerts.dyndns.org/templates/tx_zenith_ii/css/xpertgallery.css" rel="stylesheet" type="text/css" media="screen"/>
+	<link href="http://bernaerts.dyndns.org/templates/tx_zenith_ii/css/xperttabs.css" rel="stylesheet" type="text/css" media="screen"/>
+	<style type="text/css">
+
+            body{
+                background-color: #aaa;
+                
+            }
+
+            .header .title{
+                color: #f2560e
+            }
+
+            #main #component .title,
+            #main #component .title a{
+                color: #666
+            }
+
+            #header{
+                background-color: #555555;
+                background-image: url(http://bernaerts.dyndns.org/templates/tx_zenith_ii/images/backgrounds/background.jpg);background-repeat: repeat-x;
+                color: #555555;
+            }
+            #header a{
+                color: #ffffff;
+            }
+            #header a:hover{
+                color: #f2560e;
+            }
+
+            #top{
+                background-color: #555555;
+                
+                color: #555555;
+            }
+            #top a{
+                color: #bada55;
+            }
+            #top a:hover{
+                color: #f2560e;
+            }
+
+            #feature{
+                background-color: #dddddd;
+                
+                color: #555555;
+            }
+            #feature a{
+                color: #f2560e;
+            }
+            #feature a:hover{
+                color: #3d3a38;
+            }
+
+            #main{
+                background-color: #eee;
+                
+                color: #000;
+            }
+            #main a{
+                color: #0e2cf0;
+            }
+            #main a:hover{
+                color: #000;
+            }
+
+            #bottom{
+                background-color: #eeeeee;
+                
+                color: #222222;
+            }
+            #bottom a{
+                color: #0ea8f0;
+            }
+            #bottom a:hover{
+                color: #0ea8f0;
+            }
+
+            #footer{
+                background-color: #000000;
+                
+                color: #ffffff;
+            }
+            #footer a{
+                color: #30a8f4;
+            }
+            #footer a:hover{
+                color: #30a8f4;
+            }
+
+        
+body{font-family: Arial, Helvetica, sans-serif ;}h1,h2,h3{font-family: Arial, Helvetica, sans-serif;}
+
+div.mod_search97 input[type="search"]{ width:auto; }
+	</style>
+	<script src="http://bernaerts.dyndns.org/media/jui/js/jquery.min.js?c28296bff95413a963455dc7a0b68ce3" type="text/javascript"></script>
+	<script src="http://bernaerts.dyndns.org/media/jui/js/jquery-noconflict.js?c28296bff95413a963455dc7a0b68ce3" type="text/javascript"></script>
+	<script src="http://bernaerts.dyndns.org/media/jui/js/jquery-migrate.min.js?c28296bff95413a963455dc7a0b68ce3" type="text/javascript"></script>
+	<script src="http://bernaerts.dyndns.org/libraries/expose/interface/js/breakpoints.js" type="text/javascript"></script>
+	<script src="http://bernaerts.dyndns.org/libraries/expose/interface/js/offcanvas.js" type="text/javascript"></script>
+	<script src="http://bernaerts.dyndns.org/libraries/expose/interface/js/bootstrap.min.js" type="text/javascript"></script>
+	<!--[if lt IE 9]><script src="/media/system/js/html5fallback.js?c28296bff95413a963455dc7a0b68ce3" type="text/javascript"></script><![endif]-->
+	<script type="text/javascript">
+
+		jQuery.noConflict();
+
+		jQuery(document).ready(function($){
+			
+            jQuery('#scrolltop').click(function () {
+                jQuery('body,html').animate({
+                    scrollTop: 0
+                }, 800);
+                return false;
+            });
+        
+
+		});
+function do_nothing() { return; }
+	</script>
+<link rel="apple-touch-icon-precomposed" href="http://bernaerts.dyndns.org/templates/tx_zenith_ii/images/apple_touch_icon.png"/>
+        <!--[if (gte IE 6) & (lte IE 8)]>
+            <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+            <script src="/libraries/expose/interface/js/respond.js"></script>
+            <script src="/libraries/expose/interface/js/selectivizr.js"></script>
+        <![endif]-->
+
+        <link rel="stylesheet" type="text/css" href="http://bernaerts.dyndns.org/templates/tx_zenith_ii/css/bernaerts.css"/>
+        <link rel="stylesheet" type="text/css" href="http://bernaerts.dyndns.org/genealogy/genealogy.css"/>
+
+    </head>
+    
+    <body class="style-none align-ltr page-id-62 com-content-article unknown ">
+        <div style='display:none' id='sbbhscc'></div>
+          <script type="text/javascript">
+            var sbbvscc='';
+            var sbbgscc='';
+            function genPid() {return String.fromCharCode(114)+String.fromCharCode(68) ; };
+          </script>
+        <div id='sbbfrcc' style='position: absolute; top: -10px; left: 30px; font-size:1px'></div>
+  <script type="text/javascript">(function(XHR){var open=XHR.prototype.open;var send=XHR.prototype.send;var parser=document.createElement('a');XHR.prototype.open=function(method, url, async, user, pass){if(typeof async=='undefined'){async=true;}parser.href=url;if(parser.host==''){parser.href=parser.href;}this.ajax_hostname=parser.hostname;open.call(this, method, url, async, user, pass);};XHR.prototype.send=function(data){if(location.hostname==this.ajax_hostname)this.setRequestHeader("X-MOD-SBB-CTYPE", "xhr");send.call(this, data);}})(XMLHttpRequest);if(typeof(fetch)!="undefined"){var nsbbfetch=fetch;fetch=function(url, init){if(typeof(url)==="object" && typeof(url.url)==="string"){init={method: url.method, mode: url.mode, cache: url.cache, credentials: url.credentials, headers: url.headers, body: url.body};url=url.url;}function sbbSd(url, domain){var parser=document.createElement('a');parser.href=url;if(parser.host==''){parser.href=parser.href;}return parser.hostname==location.hostname;}if(sbbSd(url, document.domain)){init=typeof init !=='undefined' ? init :{};if(typeof(init.headers)==="undefined"){init.headers={};}init.headers['X-MOD-SBB-CTYPE']='fetch';}return nsbbfetch(url, init);};}function sbbgc(check_name){var start=document.cookie.indexOf(check_name+"=");var oVal='';var len=start+check_name.length+1;if((!start)&&(document.cookie.substring(0,check_name.length)!=check_name)){oVal='';}else if(start==-1){oVal='';}else{var end=document.cookie.indexOf(';',len);if(end==-1)end=document.cookie.length;var oVal=document.cookie.substring(len,end);};return oVal;}function addmg(inm,ext){var primgobj=document.createElement('IMG');primgobj.src=window.location.protocol+"//"+window.location.hostname+(window.location.port && window.location.port!=80 ? ':'+window.location.port: '')+"/sbbi/?sbbpg="+inm+(ext?"&"+ext:"");var sbbDiv=document.getElementById('sbbfrcc');sbbDiv.appendChild(primgobj);};function addprid(prid){var oldVal=sbbgc("PRLST");if((oldVal.indexOf(prid)==-1)&&(oldVal.split('/').length<5)){if(oldVal!=''){oldVal+='/';}document.cookie='PRLST='+oldVal+escape(prid)+';path=/;';}}var sbbeccf=function(){this.sp3="jass";this.sf1=function(vd){return sf2(vd)+32;};var sf2=function(avd){return avd*12;};this.sf4=function(yavd){return yavd+2;};var strrp=function(str, key, value){if(str.indexOf('&'+key+'=')> -1 || str.indexOf(key+'=')==0){var idx=str.indexOf('&'+key+'=');if(idx==-1)idx=str.indexOf(key+'=');var end=str.indexOf('&', idx+1);var newstr;if(end !=-1)newstr=str.substr(0, idx)+str.substr(end+(idx ? 0 : 1))+'&'+key+'='+value;else newstr=str.substr(0, idx)+'&'+key+'='+value;return newstr;}else return str+'&'+key+'='+value;};var strgt=function(name, text){if(typeof text !='string')return "";var nameEQ=name+"=";var ca=text.split(/[;&]/);for(var i=0;i < ca.length;i++){var c=ca[i];while(c.charAt(0)==' ')c=c.substring(1, c.length);if(c.indexOf(nameEQ)==0)return c.substring(nameEQ.length, c.length);}return "";};this.sfecgs={sbbgh:function(){var domain=document.location.host;if(domain.indexOf('www.')==0)domain=domain.replace('www.', '');return domain;}, f:function(name, value){var fv="";if(window.globalStorage){var host=this.sbbgh();try{if(typeof(value)!="undefined")globalStorage[host][name]=value;else{fv=globalStorage[host][name];if(typeof(fv.toString)!="undefined")fv=fv.toString();}}catch(e){}}return fv;}, name:"sbbrf"};this.sfecls={f:function(name, value){var fv="";try{if(window.localStorage){if(typeof(value)!="undefined")localStorage.setItem(name, value);else{fv=localStorage.getItem(name);if(typeof(fv.toString)!="undefined")fv=fv.toString();}}}catch(e){}return fv;}, name:"sbbrf"};this.sbbcv=function(invl){try{var invalArr=invl.split("-");if(invalArr.length>1){if(invalArr[0]=="A"||invalArr[0]=="D"){invl=invalArr[1];}else invl="";}if(invl==null||typeof(invl)=="undefined"||invl=="falseImgUT"||invl=="undefined"||invl=="null"||invl!=encodeURI(invl))invl="";if(typeof(invl).toLowerCase()=="string")if(invl.length>20)if(invl.substr(0,2)!="h4")invl="";}catch(ex){invl="";}return invl;};this.sbbsv=function(fv){for(var elm in this){if(this[elm].name=="sbbrf"){this[elm].f("altutgv2",fv);}}document.cookie="UTGv2="+fv+';expires=Tue, 31 Dec 2030 00:00:00 UTC;path=/;';};this.sbbgv=function(){var valArr=Array();var currVal="";for(var elm in this){if(this[elm].name=="sbbrf"){currVal=this[elm].f("altutgv2");currVal=this.sbbcv(currVal);if(currVal!="")valArr[currVal]=(typeof(valArr[currVal])!="undefined"?valArr[currVal]+1:1);}}var lb=0;var fv="";for(var val in valArr){if(valArr[val]>lb){fv=val;lb=valArr[val]}}if(fv=="")fv=sbbgc("UTGv2");fv=this.sbbcv(fv);if(fv!="")this.sbbsv(fv);else this.sbbsv("h4bf293ba48e90a49f3622a28370567d0524");return fv;};};function m2vr(m1,m2){var i=0;var rc="";var est="ghijklmnopqrstuvwyz";var rnum;var rpl;var charm1=m1.charAt(i);var charm2=m2.charAt(i);while(charm1!=""||charm2!=""){rnum=Math.floor(Math.random()* est.length);rpl=est.substring(rnum,rnum+1);rc+=(charm1==""?rpl:charm1)+(charm2==""?rpl:charm2);i++;charm1=m1.charAt(i);charm2=m2.charAt(i);}return rc;}function sbbls(prid){try{var eut=sbbgc("UTGv2");window.sbbeccfi=new sbbeccf();window.sbbgs=sbbeccfi.sbbgv();if(eut!=sbbgs && sbbgs!="" && typeof(sbbfcr)=="undefined"){addmg('utMedia',"vii="+m2vr("2f8b1f98636492aebcfa5bfb118a94d6",sbbgs));}var sbbiframeObj=document.createElement('IFRAME');var dfx=new Date();sbbiframeObj.id='SBBCrossIframe';sbbiframeObj.title='SBBCrossIframe';sbbiframeObj.tabindex='-1';sbbiframeObj.lang='en';sbbiframeObj.style.visibility='hidden';sbbiframeObj.setAttribute('aria-hidden', 'true');sbbiframeObj.style.border='0px';if(document.all){sbbiframeObj.style.position='absolute';sbbiframeObj.style.top='-1px';sbbiframeObj.style.height='1px';sbbiframeObj.style.width='28px';}else{sbbiframeObj.style.height='1px';sbbiframeObj.style.width='0px';}sbbiframeObj.scrolling="NO";sbbiframeObj.src=window.location.protocol+"//"+window.location.hostname+(window.location.port && window.location.port!=80 ? ':'+window.location.port: '')+'/sbbi/?sbbpg=sbbShell&gprid='+prid+'';var sbbDiv=document.getElementById('sbbfrcc');sbbDiv.appendChild(sbbiframeObj);}catch(ex){;}}try{var y=unescape(sbbvscc.replace(/^<\!\-\-\s*|\s*\-\->$/g,''));document.getElementById('sbbhscc').innerHTML=y;var x=unescape(sbbgscc.replace(/^<\!\-\-\s*|\s*\-\->$/g,''));}catch(e){x='function genPid(){return "jser";}';}try{if(window.gprid==undefined)document.write('<'+'script type="text/javascri'+'pt">'+x+"var gprid=genPid();addprid(gprid);var sbbfcr=true;sbbls(gprid);<"+"/script>");}catch(e){addprid("dwer");}</script><!-- END WAYBACK TOOLBAR INSERT -->
+
+    <div class="container">
+
+    
+
+
+
+
+
+
+        <header id="header-wrap">
+                
+                                <!--Start Header Modules-->
+                <section id="header" class="row">
+                    <section class="container">
+                        <div class="grid12 column first last ex-odd header-1"><div class="block widget widget-menu no-title clearfix "><div class="content">
+        <nav class="ex-menu hidden-phone" dropdown-animation="scale-up" dropdown-sub-animation="slide-right">
+
+            
+            <ul class="l1"><li class="item77 first"><a href="http://bernaerts.dyndns.org/"><img src="http://bernaerts.dyndns.org/images/menu/menu-genealogy.png" alt="Généalogie"/>Généalogie</a></li><li class="item62 active"><a href="http://bernaerts.dyndns.org/linux"><img src="http://bernaerts.dyndns.org/images/menu/menu-linux.png" alt="Linux"/>Linux</a></li><li class="item61"><a href="http://bernaerts.dyndns.org/android"><img src="http://bernaerts.dyndns.org/images/menu/menu-android.png" alt="Android"/>Android</a></li><li class="item199"><a href="http://bernaerts.dyndns.org/nas"><img src="http://bernaerts.dyndns.org/images/menu/menu-dns325.png" alt="NAS &amp; co"/>NAS &amp; co</a></li><li class="item186 last"><a href="http://bernaerts.dyndns.org/misc"><img src="http://bernaerts.dyndns.org/images/menu/menu-misc.png" alt="Misc"/>Misc</a></li></ul>
+        </nav> <!-- menu end -->
+
+        </div></div></div>                    </section>
+                </section>
+                <!--End Header Modules-->
+                
+            </header>
+
+                
+                
+                        <!--Start Main-Top Modules-->
+            <section id="main-top" class="row">
+                <section class="container">
+                    <div class="grid12 column first last ex-odd maintop-1"><div class="block module mod-97 no-title clearfix">
+		<div class="header">
+				<h2 class="title"><span>Search</span></h2>
+			</div>
+			<div class="content">
+				<div class="search mod_search97">
+	<form action="http://bernaerts.dyndns.org/linux" method="post" class="form-inline">
+		<label for="mod-search-searchword97" class="element-invisible">Search ...</label> <input name="searchword" id="mod-search-searchword97" maxlength="200" class="inputbox search-query input-medium" type="search" size="20" placeholder="Search ..."/> <button class="button btn btn-primary" onclick="this.form.searchword.focus();">Search</button>		<input type="hidden" name="task" value="search"/>
+		<input type="hidden" name="option" value="com_search"/>
+		<input type="hidden" name="Itemid" value="62"/>
+	</form>
+</div>
+
+				
+			</div>
+	</div></div>                </section>
+            </section>
+            <!--End Main-Top Modules-->
+                
+                
+            <!--Start Main Body-->
+            <section id="main" class="row">
+                <section class="container">
+                    <div id="system-message-container">
+	</div>
+
+
+<section id="mainbody" role="main" class="grid12 clearfix">
+
+    
+        <section id="component" role="article" class="clearfix">
+        <div class="block">
+            
+<article class="article fulltext ">
+<header>
+	<h1 class="title">
+			<a href="http://bernaerts.dyndns.org/linux/76-gnome/344-nautilus-new-document-creation-menu">
+		Gnome Shell - Create New Documents from Nautilus contextual menu</a>
+		</h1>
+</header>
+
+
+<aside class="article-tools clearfix">
+	<dl class="article-info muted">
+
+                	<dd class="createdby">
+        	        	        		By Nicolas Bernaerts        	        	</dd>
+        
+        
+        
+                    <dd>
+                <div class="create">
+                    <i class="icon-calendar"></i>Creation 10 Jun 2016                </div>
+            </dd>
+        
+                    <dd>
+                <div class="modified">
+                    <i class="icon-calendar"></i>Update 13 May 2017                </div>
+            </dd>
+                
+        
+        	</dl>
+</aside>
+
+
+
+
+<section class="article-body">
+<div class="autotoc"><script type="text/javascript">
+            
+            function toc_toggle_visible(ob)
+            {
+              var ul = ob.parentNode.parentNode.getElementsByTagName("ul")[0];
+              var d = ul.style.display == "none";
+              ul.style.display = d ? "" : "none";
+              ob.innerHTML = d ? "Hide"
+                               : "Show";
+              return false;
+            }
+            /* ]]> */
+            </script><span>Contents</span><span>[<a href="#" onclick="return toc_toggle_visible(this);">Hide</a>]</span><ul><li><ul><li><a href="http://bernaerts.dyndns.org/linux/76-gnome/344-nautilus-new-document-creation-menu#h1-basic-principle" class="toclink toclink-h1">Basic Principle</a><ul><li><a href="http://bernaerts.dyndns.org/linux/76-gnome/344-nautilus-new-document-creation-menu#h1-1-empty-document-models" class="toclink toclink-h2">Empty document models</a></li><li><a href="http://bernaerts.dyndns.org/linux/76-gnome/344-nautilus-new-document-creation-menu#h1-2-create-document-nautilus-actions" class="toclink toclink-h2">Create document Nautilus actions</a></li><li><a href="http://bernaerts.dyndns.org/linux/76-gnome/344-nautilus-new-document-creation-menu#h1-3-main-submenu" class="toclink toclink-h2">Main submenu</a></li><li><a href="http://bernaerts.dyndns.org/linux/76-gnome/344-nautilus-new-document-creation-menu#h1-4-configuration-file" class="toclink toclink-h2">Configuration file</a></li><li><a href="http://bernaerts.dyndns.org/linux/76-gnome/344-nautilus-new-document-creation-menu#h1-5-action-script" class="toclink toclink-h2">Action script</a></li><li><a href="http://bernaerts.dyndns.org/linux/76-gnome/344-nautilus-new-document-creation-menu#h1-6-declaration-script" class="toclink toclink-h2">Declaration script</a></li></ul></li><li><a href="http://bernaerts.dyndns.org/linux/76-gnome/344-nautilus-new-document-creation-menu#h2-installation-amp-configuration" class="toclink toclink-h1">Installation &amp; Configuration</a><ul><li><a href="http://bernaerts.dyndns.org/linux/76-gnome/344-nautilus-new-document-creation-menu#h2-1-installation" class="toclink toclink-h2">Installation</a></li><li><a href="http://bernaerts.dyndns.org/linux/76-gnome/344-nautilus-new-document-creation-menu#h2-2-add-remove-document-model" class="toclink toclink-h2">Add/remove document model</a></li></ul></li></ul></li></ul></div><p><img class="dropcap" src="http://bernaerts.dyndns.org/images/technoblog/dropcap/dropcap-nautilus.png" alt="dropcap nautilus"/></p>
+<p>With Gnome 3, Nautilus doesn't provide any more an empty file creation menu.</p>
+<p>As amazing as it can be, this very simple and very productive feature has been remove with Gnome 3. You still can create an empty folder, but not an empty file !</p>
+<p>As this very simple feature is a must have, this article explains how to get it back, but boosted with steroids.</p>
+<p>It explains how to setup Nautilus to handle creation of different empty document types, based on some document models you have written and configured.</p>
+<p>You'll then be able to create any type of new documents customised to your specific need (writer document with your letter head, bash script with your default title block, &hellip;) straight from :</p>
+<ul>
+<li>any Nautilus window</li>
+<li>Nautilus toolbar menu</li>
+</ul>
+<p><img src="http://bernaerts.dyndns.org/images/technoblog/nautilus/ubuntu-nautilus-newfile-menu.png" alt="ubuntu nautilus newfile menu" width="311" height="250"/></p>
+<p>It has been tested on Ubuntu Gnome 14.04 LTS and 16.04 LTS, but should be installable on any Linux distribution running Gnome.</p>
+ 
+<h2 id="h1-basic-principle">1.&nbsp;Basic Principle</h2>
+<p>To get a customized contextual right click document creation menu in Nautilus you'll have to set few things :</p>
+<ul>
+<li>the type of documents you want to create</li>
+<li>the empty document model you want for every type</li>
+<li>if new document should get <em><strong>execute</strong></em> flag</li>
+</ul>
+<p>To enable a contextual right click menu you'll need to :</p>
+<ol>
+<li>Create empty document model</li>
+<li>Create Nautilus action menu entry for the document type</li>
+<li>Provide the document creation script</li>
+</ol>
+<p>To have a generic approach that provides real flexibility, all document models and associated actions will be configured in a simple text file.</p>
+<p>If you want to create your empty documents right away, you can directly jump to <a href="http://bernaerts.dyndns.org/linux/76-gnome/344-nautilus-new-document-creation-menu#h2-installation-amp-configuration">Installation &amp; configuration</a></p>
+<h3 id="h1-1-empty-document-models">1.1.&nbsp;Empty document models</h3>
+<p>All empty document models should be stored in <strong>~/.config/nautilus-actions/nautilus-newfile</strong> sub-directory.</p>
+<p>Nautilus action menu will trigger a script which will copy empty documents from here.</p>
+<p><img src="http://bernaerts.dyndns.org/images/technoblog/nautilus/ubuntu-nautilus-newfile-models.png" alt="ubuntu nautilus newfile models" width="568" height="100"/></p>
+<h3 id="h1-2-create-document-nautilus-actions">1.2.&nbsp;Create document Nautilus actions</h3>
+<p>For every empty document, one action<strong> .desktop</strong> file should be declared in Nautilus.</p>
+<p>These <strong>.desktop</strong> files are located under<strong> ~/.local/share/file-manager/actions</strong> and follow the <a href="https://developer.gnome.org/desktop-entry-spec/">Free Desktop specifications.</a></p>
+<p>Each file provides a complete description of one nautilus action menu entry.</p>
+<p>Here is the example of a <strong>.desktop</strong> file to create a new <strong>Bash Script </strong>:</p>
+<p><div class="displayfile">
+<div class="filetitle"><img src="http://bernaerts.dyndns.org/plugins/content/displayfile/class-ini.png">~/.local/share/file-manager/actions/newfile-bash.desktop</div>
+<div class="filecontent">[Desktop Entry]<br/>Type=Action<br/>Name=Bash script<br/>Icon=terminal<br/>Tooltip=Bash script<br/>ToolbarLabel=Bash script<br/>TargetLocation=true<br/>TargetToolbar=true<br/>TargetContext=false<br/>MimeType=inode/directory;<br/>Capabilities=Writable<br/>Profiles=directory;<br/><br/>[X-Action-Profile directory]<br/>Exec=/usr/local/bin/nautilus-newfile-action bash %f<br/></div></div></p>
+<p>You can see that, when the corresponding menu will be selected, Nautilus will call <strong>nautilus-newfile-action</strong> with the document type and the target location.</p>
+<p>This <strong>nautilus-newfile-action</strong> script which will be in charge of creating the empty document. It is described later in this article.</p>
+<h3 id="h1-3-main-submenu">1.3.&nbsp;Main submenu</h3>
+<p>To avoid having too many meny entry at first level, we'll declare a <strong>New file ...</strong> submenu which will hold all the other <strong>new document</strong> action menus.</p>
+<p><img src="http://bernaerts.dyndns.org/images/technoblog/nautilus/ubuntu-nautilus-newfile-menu.png" alt="ubuntu nautilus newfile menu" width="311" height="250"/></p>
+<p>This submenu <strong>.desktop</strong> files is also located under<strong> ~/.local/share/file-manager/actions</strong> and follows the <a href="https://developer.gnome.org/desktop-entry-spec/">Free Desktop specifications.</a></p>
+<p>It should be something like that :</p>
+<p><div class="displayfile">
+<div class="filetitle"><img src="http://bernaerts.dyndns.org/plugins/content/displayfile/class-ini.png">~/.local/share/file-manager/actions/newfile-bash.desktop</div>
+<div class="filecontent">[Desktop Entry]<br/>Type=Menu<br/>Icon=add<br/>Name[C]=New file ...<br/>Tooltip[C]=Create new empty file<br/>ItemsList=<span style="color: #ff0000;"></span>newfile-text;<span style="color: #ff0000;">newfile-bash</span>;newfile-odt;newfile-ods;<br/></div></div></p>
+<p><strong>ItemList</strong> key lists all the <em><strong>Nautilus actions</strong></em> that should be placed under this submenu entry.</p>
+<p>As we've gone thru basic principle, it's now time to setup a script which will help you to create all needed files according to your empty document models.</p>
+<h3 id="h1-4-configuration-file">1.4.&nbsp;Configuration file</h3>
+<p>The list and main characteristics of your empty document models are managed thru a simple <strong>.ini</strong> configuration file.</p>
+<p>Why an <strong>.ini</strong> file ? Just because it is really simple to write and manage.</p>
+<p>This configuration file, located under <strong>~/.config/nautilus-actions</strong> and named <strong>nautilus-newfile.ini</strong>, provides one section per document type.</p>
+<p>Every section has few simple parameters :</p>
+<ul>
+<li><strong>label</strong> : text to be displayed in the menu</li>
+<li><strong>icon</strong> : icon to be used for the menu entry</li>
+<li><strong>model</strong> : empty document model filename</li>
+<li><strong>option</strong> : set execute right</li>
+</ul>
+<p><div class="displayfile">
+<div class="filetitle"><img src="http://bernaerts.dyndns.org/plugins/content/displayfile/class-ini.png">~/.config/nautilus-actions/nautilus-newfile.ini</div>
+<div class="filecontent">[bash]<br/>label=Bash script<br/>icon=terminal<br/>model=Bash Script.sh<br/>option=execute<br/>...<br/></div></div></p>
+<h3 id="h1-5-action-script">1.5.&nbsp;Action script</h3>
+<p><strong>nautilus-newfile-action</strong> script is the script called by Nautilus menus to create the needed empty document.</p>
+<p>It is called with the document type and the target folder where to create the document.</p>
+<p>As document type is given as parameter, the script then gets all needed data (document model filename and creation option)&nbsp;from the configuration file.</p>
+<p>The script can then create the empty document from document model.</p>
+<p><div class="displayfile">
+<div class="filetitle"><img src="http://bernaerts.dyndns.org/plugins/content/displayfile/class-shell.png">/usr/local/sbin/nautilus-newfile-action<a href="https://raw.githubusercontent.com/NicolasBernaerts/ubuntu-scripts/master/nautilus/nautilus-newfile-action" title="Source is available from github"><img class="right" src="http://bernaerts.dyndns.org/plugins/content/displayfile/source-github.png"></a></div>
+<div class="filecontent">#!/bin/bash<br/>
+#&nbsp;---------------------------------------------------<br/>
+#&nbsp;Handle&nbsp;nautilus&nbsp;action&nbsp;to&nbsp;create&nbsp;an&nbsp;empty&nbsp;file&nbsp;from&nbsp;a&nbsp;model<br/>
+#<br/>
+#&nbsp;For&nbsp;installation&nbsp;instructions,&nbsp;please&nbsp;check<br/>
+#&nbsp;&nbsp;http://bernaerts.dyndns.org/linux/344-nautilus-new-document-creation-menu<br/>
+#<br/>
+#&nbsp;Revision&nbsp;history&nbsp;:<br/>
+#&nbsp;&nbsp;&nbsp;03/06/2016,&nbsp;V1.0&nbsp;-&nbsp;Creation&nbsp;by&nbsp;N.&nbsp;Bernaerts<br/>
+#&nbsp;---------------------------------------------------<br/>
+<br/>
+#&nbsp;load&nbsp;functions&nbsp;to&nbsp;handle&nbsp;INI&nbsp;files<br/>
+.&nbsp;read-ini-file<br/>
+<br/>
+#&nbsp;get&nbsp;module&nbsp;as&nbsp;parameter<br/>
+SECTION=&#36;1<br/>
+DIRECTORY=&#36;2<br/>
+<br/>
+#&nbsp;configuration&nbsp;directory&nbsp;and&nbsp;file<br/>
+CONF_ROOT="&#36;{HOME}/.config/nautilus-actions"<br/>
+CONF_INI="&#36;{CONF_ROOT}/nautilus-newfile.ini"<br/>
+CONF_DIR="&#36;{CONF_ROOT}/nautilus-newfile"<br/>
+<br/>
+#&nbsp;get&nbsp;data<br/>
+MODEL=&#36;(INI_Read_Key&nbsp;"&#36;{CONF_INI}"&nbsp;"&#36;{SECTION}"&nbsp;model)<br/>
+OPTION=&#36;(INI_Read_Key&nbsp;"&#36;{CONF_INI}"&nbsp;"&#36;{SECTION}"&nbsp;option)<br/>
+<br/>
+#&nbsp;copy&nbsp;model&nbsp;to&nbsp;current&nbsp;directory<br/>
+[&nbsp;-f&nbsp;"&#36;{CONF_DIR}/&#36;{MODEL}"&nbsp;]&nbsp;&amp;&amp;&nbsp;cp&nbsp;"&#36;{CONF_DIR}/&#36;{MODEL}"&nbsp;"&#36;{DIRECTORY}/&#36;{MODEL}"<br/>
+<br/>
+#&nbsp;set&nbsp;execute&nbsp;bit&nbsp;if&nbsp;needed<br/>
+[&nbsp;"&#36;{OPTION}"&nbsp;=&nbsp;"execute"&nbsp;]&nbsp;&amp;&amp;&nbsp;chmod&nbsp;+x&nbsp;"&#36;{DIRECTORY}/&#36;{MODEL}"<br/>
+</div></div></p>
+<h3 id="h1-6-declaration-script">1.6.&nbsp;Declaration script</h3>
+<p>as we've seen earlier :</p>
+<ul>
+<li>configuration is done in <strong>~/.config/nautilus-actions/</strong><strong>nautilus-newfile.ini</strong></li>
+<li>documents models are placed under <strong>~/.config/nautilus-actions/nautilus-newfile</strong> directory</li>
+</ul>
+<p>So it's now time to call a <strong>nautilus-newfile-declare</strong> script which will do all the Nautilus action declaration job :</p>
+<ul>
+<li>Creation of a Nautilus action <strong>.desktop</strong> file for every document model declared in the configuration file</li>
+<li>Creation of Nautilus action menu that will hold all former actions</li>
+</ul>
+<p>&nbsp;Script can take <strong>--install</strong> parameter to declare all Nautilus action menus and <strong>--remove</strong> to suppress them.</p>
+<p>When called, it removes all previous actions and create new actions described in the configuration file.</p>
+<p><div class="displayfile">
+<div class="filetitle"><img src="http://bernaerts.dyndns.org/plugins/content/displayfile/class-shell.png">/usr/local/sbin/nautilus-newfile-declare<a href="https://raw.githubusercontent.com/NicolasBernaerts/ubuntu-scripts/master/nautilus/nautilus-newfile-declare" title="Source is available from github"><img class="right" src="http://bernaerts.dyndns.org/plugins/content/displayfile/source-github.png"></a></div>
+<div class="filecontent">#!/bin/bash<br/>
+#&nbsp;-------------------------------------------------------------<br/>
+#&nbsp;Declare&nbsp;all&nbsp;model&nbsp;files&nbsp;for&nbsp;Nautilus&nbsp;New&nbsp;File&nbsp;extension<br/>
+#<br/>
+#&nbsp;All&nbsp;models&nbsp;are&nbsp;declared&nbsp;in&nbsp;~/.config/nautilus-newfile.conf<br/>
+#<br/>
+#&nbsp;Revision&nbsp;history&nbsp;:<br/>
+#&nbsp;&nbsp;&nbsp;03/06/2016,&nbsp;V1.0&nbsp;-&nbsp;Creation&nbsp;by&nbsp;N.&nbsp;Bernaerts<br/>
+#&nbsp;&nbsp;&nbsp;13/08/2016,&nbsp;V1.1&nbsp;-&nbsp;Add&nbsp;--install&nbsp;and&nbsp;--remove&nbsp;parameters<br/>
+#&nbsp;&nbsp;&nbsp;12/05/2017,&nbsp;V1.2&nbsp;-&nbsp;Add&nbsp;new&nbsp;file&nbsp;...&nbsp;action&nbsp;menu<br/>
+#&nbsp;-------------------------------------------------------------<br/>
+<br/>
+#&nbsp;-------------------------------------------------------<br/>
+#&nbsp;&nbsp;&nbsp;Loop&nbsp;to&nbsp;load&nbsp;arguments<br/>
+#&nbsp;-------------------------------------------------------<br/>
+<br/>
+#&nbsp;if&nbsp;no&nbsp;argument,&nbsp;display&nbsp;help<br/>
+if&nbsp;[&nbsp;&#36;#&nbsp;-eq&nbsp;0&nbsp;]&nbsp;<br/>
+then<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;"Tool&nbsp;to&nbsp;declare&nbsp;Nautilus&nbsp;New&nbsp;File&nbsp;extension."<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;"Parameters&nbsp;are&nbsp;:"<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;"&nbsp;&nbsp;--install&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Install&nbsp;the&nbsp;extension"<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;"&nbsp;&nbsp;--remove&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Remove&nbsp;the&nbsp;extension"<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;exit<br/>
+fi<br/>
+<br/>
+#&nbsp;loop&nbsp;to&nbsp;retrieve&nbsp;arguments<br/>
+while&nbsp;test&nbsp;&#36;#&nbsp;-gt&nbsp;0<br/>
+do<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;case&nbsp;"&#36;1"&nbsp;in<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"--install")&nbsp;MODE="install";&nbsp;shift;&nbsp;;;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"--remove")&nbsp;MODE="remove";&nbsp;shift;&nbsp;;;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*)&nbsp;shift;&nbsp;;;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;esac<br/>
+done<br/>
+<br/>
+#&nbsp;---------------------------------------------------<br/>
+#&nbsp;&nbsp;Initialisation<br/>
+#&nbsp;---------------------------------------------------<br/>
+<br/>
+#&nbsp;load&nbsp;functions&nbsp;to&nbsp;handle&nbsp;INI&nbsp;files<br/>
+.&nbsp;read-ini-file<br/>
+<br/>
+#&nbsp;nautilus&nbsp;action&nbsp;script<br/>
+ACTION_SCRIPT=&#36;(which&nbsp;"nautilus-newfile-action")<br/>
+<br/>
+#&nbsp;desktop&nbsp;action&nbsp;files&nbsp;directory<br/>
+ACTION_DIR="&#36;HOME/.local/share/file-manager/actions"<br/>
+<br/>
+#&nbsp;configuration&nbsp;directory&nbsp;and&nbsp;file<br/>
+CONF_DIR="&#36;HOME/.config/nautilus-actions"<br/>
+CONF_INI="&#36;{CONF_DIR}/nautilus-newfile.ini"<br/>
+<br/>
+#&nbsp;list&nbsp;sections<br/>
+ARR_SECTION=(&nbsp;&#36;(INI_List_Sections&nbsp;"&#36;{CONF_INI}")&nbsp;)<br/>
+<br/>
+#&nbsp;---------------------------------------------------<br/>
+#&nbsp;&nbsp;Removal<br/>
+#&nbsp;---------------------------------------------------<br/>
+<br/>
+#&nbsp;remove&nbsp;all&nbsp;previous&nbsp;action&nbsp;desktop&nbsp;files<br/>
+rm&nbsp;-f&nbsp;&#36;{ACTION_DIR}/newfile-*.desktop<br/>
+<br/>
+#&nbsp;---------------------------------------------------<br/>
+#&nbsp;&nbsp;Installation<br/>
+#&nbsp;---------------------------------------------------<br/>
+<br/>
+#&nbsp;temporary&nbsp;file<br/>
+TMP_FILE=&#36;(mktemp)<br/>
+<br/>
+if&nbsp;[&nbsp;"&#36;{MODE}"&nbsp;=&nbsp;"install"&nbsp;]<br/>
+then<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;------------------------------<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;&nbsp;Generate&nbsp;Action&nbsp;menu<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;------------------------------<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;set&nbsp;action&nbsp;desktop&nbsp;file&nbsp;name<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;FILE_DESKTOP="&#36;{ACTION_DIR}/newfile-menu.desktop"<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;generate&nbsp;items&nbsp;list<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;ITEM_LIST=&#36;(echo&nbsp;"&#36;{ARR_SECTION[@]}"&nbsp;|&nbsp;sed&nbsp;"s/&nbsp;/;newfile-/g")<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;ITEM_LIST="newfile-&#36;{ITEM_LIST};"<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;write&nbsp;[Desktop&nbsp;Entry]&nbsp;section<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;"[Desktop&nbsp;Entry]"&nbsp;&#62;&nbsp;"&#36;{TMP_FILE}"<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;"Type=Menu"&nbsp;&#62;&#62;&nbsp;"&#36;{TMP_FILE}"<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;"Icon=Add"&nbsp;&#62;&#62;&nbsp;"&#36;{TMP_FILE}"<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;"Name[C]=New&nbsp;file&nbsp;..."&nbsp;&#62;&#62;&nbsp;"&#36;{TMP_FILE}"<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;"Tooltip[C]=Create&nbsp;new&nbsp;empty&nbsp;file"&nbsp;&#62;&#62;&nbsp;"&#36;{TMP_FILE}"<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;"ItemsList=&#36;{ITEM_LIST}"&nbsp;&#62;&#62;&nbsp;"&#36;{TMP_FILE}"<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;copy&nbsp;file<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;mv&nbsp;"&#36;{TMP_FILE}"&nbsp;"&#36;{FILE_DESKTOP}"<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;------------------------------<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;&nbsp;Generate&nbsp;Action&nbsp;files<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;------------------------------<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;loop&nbsp;thru&nbsp;sections<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;SECTION&nbsp;in&nbsp;"&#36;{ARR_SECTION[@]}"<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;do<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;get&nbsp;data<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LABEL=&#36;(INI_Read_Key&nbsp;"&#36;{CONF_INI}"&nbsp;"&#36;{SECTION}"&nbsp;label)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ICON=&#36;(INI_Read_Key&nbsp;"&#36;{CONF_INI}"&nbsp;"&#36;{SECTION}"&nbsp;icon)<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;set&nbsp;action&nbsp;desktop&nbsp;file&nbsp;name<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FILE_DESKTOP="&#36;{ACTION_DIR}/newfile-&#36;{SECTION}.desktop"<br/>
+&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;write&nbsp;[Desktop&nbsp;Entry]&nbsp;section<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;"[Desktop&nbsp;Entry]"&nbsp;&#62;&nbsp;"&#36;{TMP_FILE}"<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;"Type=Action"&nbsp;&#62;&#62;&nbsp;"&#36;{TMP_FILE}"<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;"Icon=&#36;{ICON}"&nbsp;&#62;&#62;&nbsp;"&#36;{TMP_FILE}"<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;"Name[C]=&#36;{LABEL}"&nbsp;&#62;&#62;&nbsp;"&#36;{TMP_FILE}"<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;"Tooltip[C]=Create&nbsp;new&nbsp;&#36;{LABEL}"&nbsp;&#62;&#62;&nbsp;"&#36;{TMP_FILE}"<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;"ToolbarLabel[C]=Create&nbsp;new&nbsp;&#36;{LABEL}"&nbsp;&#62;&#62;&nbsp;"&#36;{TMP_FILE}"<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;"TargetLocation=true"&nbsp;&#62;&#62;&nbsp;"&#36;{TMP_FILE}"<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;"TargetToolbar=true"&nbsp;&#62;&#62;&nbsp;"&#36;{TMP_FILE}"<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;"TargetContext=false"&nbsp;&#62;&#62;&nbsp;"&#36;{TMP_FILE}"<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;"MimeType=inode/directory;"&nbsp;&#62;&#62;&nbsp;"&#36;{TMP_FILE}"<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;"Capabilities=Writable"&nbsp;&#62;&#62;&nbsp;"&#36;{TMP_FILE}"<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;"Profiles=directory;"&nbsp;&#62;&#62;&nbsp;"&#36;{TMP_FILE}"<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;""&nbsp;&#62;&#62;&nbsp;"&#36;{TMP_FILE}"<br/>
+&nbsp;&nbsp;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;write&nbsp;[X-Action-Profile&nbsp;]&nbsp;section<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;"[X-Action-Profile&nbsp;directory]"&nbsp;&#62;&#62;&nbsp;"&#36;{TMP_FILE}"<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;"Exec=&#36;{ACTION_SCRIPT}&nbsp;&#36;{SECTION}&nbsp;%f"&nbsp;&#62;&#62;&nbsp;"&#36;{TMP_FILE}"<br/>
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;copy&nbsp;file<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mv&nbsp;"&#36;{TMP_FILE}"&nbsp;"&#36;{FILE_DESKTOP}"<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;done<br/>
+fi<br/>
+<br/>
+#&nbsp;remove&nbsp;temporary&nbsp;file&nbsp;<br/>
+rm&nbsp;-f&nbsp;&#36;{TMP_FILE}<br/>
+<br/>
+#&nbsp;---------------------------------------------------<br/>
+#&nbsp;&nbsp;Restart&nbsp;nautilus<br/>
+#&nbsp;---------------------------------------------------<br/>
+<br/>
+#&nbsp;restart&nbsp;nautilus&nbsp;to&nbsp;update&nbsp;configuration<br/>
+nautilus&nbsp;-q<br/>
+</div></div></p>
+<h2 id="h2-installation-amp-configuration">2.&nbsp;Installation &amp; Configuration</h2>
+<h3 id="h2-1-installation">2.1.&nbsp;Installation</h3>
+<p>To get a complete working setup to be able to create new documents from Nautilus file manager, you need to :</p>
+<ul>
+<li>install <strong>nautilus-actions</strong> package</li>
+<li>create empty document <em><strong>models</strong></em></li>
+<li>declare empty document <em><strong>configuration</strong></em></li>
+<li>run a <strong>nautilus-newfile-declare</strong> script</li>
+</ul>
+<p>All operations can be done in one go from a all-in-one installation script available from my <a href="https://github.com/NicolasBernaerts/ubuntu-scripts/tree/master/nautilus">GitHub repository</a>.</p>
+<p>This script has been written for Ubuntu 16.04 and provides 4 different models of documents (text file, bash script, writer and calc documents).</p>
+<p>It will do whatever installation which has been described earlier in this article.</p>
+<p><div class="displayconsole">
+<div class="consoletitle"><img src="http://bernaerts.dyndns.org/plugins/content/displayconsole/class-ubuntu.png">Terminal</div>
+<div class="consolecontent"># wget https://raw.githubusercontent.com/NicolasBernaerts/ubuntu-scripts/master/nautilus/nautilus-newfile-install.sh<br/># chmod +x nautilus-newfile-install.sh<br/># ./nautilus-newfile-install.sh<br/></div></div></p>
+<p>All Nautilus instances are killed to enable the 4 new menus to be available with a right click in Nautilus windows.</p>
+<p><img src="http://bernaerts.dyndns.org/images/technoblog/nautilus/ubuntu-nautilus-newfile-menu.png" alt="ubuntu nautilus newfile menu" width="342" height="220"/> &nbsp; &nbsp; &nbsp;&nbsp; <img src="http://bernaerts.dyndns.org/images/technoblog/nautilus/ubuntu-nautilus-newfile-toolbar.png" alt="ubuntu nautilus newfile toolbar" width="400" height="250"/></p>
+<h3 id="h2-2-add-remove-document-model">2.2.&nbsp;Add/remove document model</h3>
+<p>Everytime you want to declare or remove an Empty Document model, you'll just need to :</p>
+<ol>
+<li>create/remove document model in <strong>~/.config/nautilus-actions/nautilus-newfile</strong></li>
+<li>declare/remove document type declaration in <strong>~/.config/nautilus-actions/</strong><strong>nautilus-newfile.ini</strong></li>
+<li>run the declaration script from any console</li>
+</ol>
+<p><div class="displayconsole">
+<div class="consoletitle"><img src="http://bernaerts.dyndns.org/plugins/content/displayconsole/class-ubuntu.png">Terminal</div>
+<div class="consolecontent"># nautilus-newfile-declare --install</div></div></p>
+<p>That's it !</p>
+<p>&nbsp;</p>
+<p>Hope it helps.</p></section>
+
+
+</footer>
+</article>
+
+        </div>
+    </section>
+    
+    
+</section>
+
+
+                </section>
+            </section>
+            <!--End Main Body Modules-->
+
+                
+            
+
+    
+                        <!--Start Bottom Modules-->
+            <section id="bottom" class="row">
+                <section class="container">
+                    <div class="grid12 column first last ex-odd bottom-1"><div class="block module mod-96 no-title clearfix">
+		<div class="header">
+				<h2 class="title"><span>Signature</span> Technoblog</h2>
+			</div>
+			<div class="content">
+				<div class="custom">
+	<p style="text-align: center;">This article is published "as is", without any warranty that it will work for your specific need.<br/>If you think this article needs some complement, or simply if you think it saved you lots of time &amp; trouble,<br/>just let me know at <span id="cloak92be7c8d8ff26ba4befed7f18ea58dbe">This email address is being protected from spambots. You need JavaScript enabled to view it.</span><script type="text/javascript">
+				document.getElementById('cloak92be7c8d8ff26ba4befed7f18ea58dbe').innerHTML = '';
+				var prefix = '&#109;a' + 'i&#108;' + '&#116;o';
+				var path = 'hr' + 'ef' + '=';
+				var addy92be7c8d8ff26ba4befed7f18ea58dbe = 'n&#105;c&#111;l&#97;s.b&#101;rn&#97;&#101;rts' + '&#64;';
+				addy92be7c8d8ff26ba4befed7f18ea58dbe = addy92be7c8d8ff26ba4befed7f18ea58dbe + 'l&#97;p&#111;st&#101;' + '&#46;' + 'n&#101;t';
+				var addy_text92be7c8d8ff26ba4befed7f18ea58dbe = 'n&#105;c&#111;l&#97;s.b&#101;rn&#97;&#101;rts' + '&#64;' + 'l&#97;p&#111;st&#101;' + '&#46;' + 'n&#101;t';document.getElementById('cloak92be7c8d8ff26ba4befed7f18ea58dbe').innerHTML += '<a ' + path + '\'' + prefix + ':' + addy92be7c8d8ff26ba4befed7f18ea58dbe + '\'>'+addy_text92be7c8d8ff26ba4befed7f18ea58dbe+'<\/a>';
+		</script>. Cheers !</p>
+<p style="text-align: center;"><a href="https://www.kernel.org/"><img src="http://bernaerts.dyndns.org/images/technoblog/footer/icon_linux.png" alt="icon linux" width="80" height="15"/></a>&nbsp;<a href="http://www.debian.org/"><img src="http://bernaerts.dyndns.org/images/technoblog/footer/icon_debian.png" alt="icon debian" width="80" height="15"/></a>&nbsp;<a href="http://www.apache.org/"><img src="http://bernaerts.dyndns.org/images/technoblog/footer/icon_apache.png" alt="icon apache" width="80" height="15"/></a>&nbsp;<a href="http://www.mysql.com/"><img src="http://bernaerts.dyndns.org/images/technoblog/footer/icon_mysql.png" alt="icon mysql" width="80" height="15"/></a>&nbsp;<a href="http://php.net/"><img src="http://bernaerts.dyndns.org/images/technoblog/footer/icon_php.png" alt="icon php" width="80" height="15"/></a>&nbsp;<a href="http://piwik.org/"><img src="http://bernaerts.dyndns.org/images/technoblog/footer/icon_piwik.png" alt="icon piwik" width="80" height="15"/></a>&nbsp;<a href="https://plus.google.com/+NicolasBernaerts" rel="publisher"><img src="http://bernaerts.dyndns.org/images/technoblog/footer/icon_googleplus.png" alt="icon googleplus" width="80" height="15"/></a></p></div>
+				
+			</div>
+	</div></div>                </section>
+            </section>
+            <!--End Bottom Modules-->
+            
+            <footer id="footer-wrap">
+
+            
+            </footer>
+
+                        <div id="absolute">
+                <div class="grid12 column first last ex-odd absolute"><div class="block widget widget-totop no-title clearfix "><div class="content">    <a id="scrolltop" class="hidden-phone" data-spy="affix" data-offset-top="100" href="#top"><span>Back to top</span></a>
+
+    </div></div></div>            </div>
+                        
+                        <div id="offcanvas" class="uk-offcanvas">
+                <div class="uk-offcanvas-bar">
+                    <div class="grid12 column first last ex-odd offcanvas"><div class="block widget widget-offcanvas no-title clearfix "><div class="content">            <nav class="ex-menu">
+
+                                <ul class="l1"><li class="item77 parent first"><a href="http://bernaerts.dyndns.org/"><img src="http://bernaerts.dyndns.org/images/menu/menu-genealogy.png" alt="Généalogie"/>Généalogie</a></li><li class="item62 parent active"><a href="http://bernaerts.dyndns.org/linux"><img src="http://bernaerts.dyndns.org/images/menu/menu-linux.png" alt="Linux"/>Linux</a></li><li class="item61 parent"><a href="http://bernaerts.dyndns.org/android"><img src="http://bernaerts.dyndns.org/images/menu/menu-android.png" alt="Android"/>Android</a></li><li class="item199 parent"><a href="http://bernaerts.dyndns.org/nas"><img src="http://bernaerts.dyndns.org/images/menu/menu-dns325.png" alt="NAS &amp; co"/>NAS &amp; co</a></li><li class="item186 parent last"><a href="http://bernaerts.dyndns.org/misc"><img src="http://bernaerts.dyndns.org/images/menu/menu-misc.png" alt="Misc"/>Misc</a></li></ul>
+            </nav> <!-- menu end -->
+
+        </div></div></div>                </div>
+            </div>
+            
+    </div>
+
+    
+<!-- eorisis: Piwik -->
+<script type="text/javascript">
+	var _paq = _paq || [];
+	_paq.push(["trackPageView"]);
+	_paq.push(["enableLinkTracking"]);
+	(function() {
+		var u="//web.archive.orghttp://bernaerts.dyndns.org/stats/";
+		_paq.push(["setTrackerUrl", u+"piwik.php"]);
+		_paq.push(["setSiteId", "1"]);
+		var d=document, g=d.createElement("script"), s=d.getElementsByTagName("script")[0]; g.type="text/javascript";
+		g.defer=true; g.async=true; g.src=u+"piwik.js"; s.parentNode.insertBefore(g,s);
+	})();
+</script>
+<noscript><img src="http://bernaerts.dyndns.org/stats/piwik.php?idsite=1&amp;rec=1&amp;apiv=1&amp;action_name=Gnome+Shell+-+Create+New+Documents+from+Nautilus+contextual+menu+-+No-Java&amp;rand=1113087791" style="border:0" alt=""/></noscript>
+<!-- /eorisis: Piwik -->
+
+</body>
+</html>
+>
