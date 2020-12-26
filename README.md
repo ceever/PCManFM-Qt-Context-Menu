@@ -1,6 +1,8 @@
-# PCManFM-Qt Context Menu
+# PCManFM-Qt (and GNOME Nautilus) Context Menu
 
-**Various context menus (i.e. right click menus) for LXQt's file manager**
+**Various context menus (i.e. right click menus) for LXQt's file manager ... also should work with Nautilus under GNOME.**
+
+**Create your own (!) actions to speed up repetitive tasks or terminal commands, or simply extend your file manager with what you really need.**
 
 Great Linux distribution: https://lxqt.org/ or https://lubuntu.me/ (which use PCManFM-Qt as file manager)
 
@@ -19,7 +21,7 @@ You should have received a copy of the GNU General Public License along with thi
 
 <p><img src="gfx/pdf.png"></p>
 
-**VLC enqueue files and folders:**<br/>
+**Enqueue files and folders in VLC:**<br/>
 
 <p><img src="gfx/vlc.png"></p>
 
@@ -48,17 +50,17 @@ Put the associated scripts (<a href="scripts/">scripts folder</a> above) onto yo
 * All users: /usr/share/file-manager/
 * Current user: ~/.local/share/file-manager/
 
-You might have to render the scripts executeable with "chmod +x SCRIPT" before they work. You can actually place them where you want, you just need to make sure to modify the "EXEC=" in the associated *.desktop* file accordingly.
+**Note**, you might have to render the scripts executable with "chmod +x SCRIPT" before they work. You can actually place them where you want, you just need to make sure to modify the "EXEC=" in the associated *.desktop* file accordingly.
 
 Restart PCManFM-Qt: killall -9 pcmanfm-qt
 
 ---
 **EXPLANATION & USAGE:**
 
-*.desktop* files are text files under Linux that generally specify a certain program executable. But they are also used for autostart topics (/etc/xdg/autostart) or for filemanager actions, often with Nautilus (GNOME) but also with PCManFM-Qt (LXQt).
+*.desktop* files are text files under Linux that generally specify a certain program executable. But they are also used for autostart topics (/etc/xdg/autostart) or for file manager actions, often with Nautilus (GNOME) but also with PCManFM-Qt (LXQt).
 
 **Scripts:**
-* The scripts are very simple and you can modify them if required. You might even replace programs that are not on your system by your prefered alternative.
+* The scripts are very simple and you can modify them if required. You might even replace programs that are not on your system by your preferred alternative.
 * The scripts are needed due to the limitation of .desktop files wrt. the "EXEC=" parameter, which do not accept complex scripts.
 * **Note**, if you place the scripts under *~/.local/share/file-manager/* you will have to modify the path in the *.desktop* file to your profile path accordingly.
 
@@ -84,14 +86,14 @@ If not yet installed on your system, install via:
 
 **"Queue in VLC":**
 * We require two *.desktop* files because it is not possible to filter the selection of files and folders such that the context menu is properly displayed.
-* 
+* Specifically "MimeTypes=inode/directory;audio/*;video/*;" will only always allow selection of either folders or files, never both at the same time.
+
 **"Bulk rename":**
 * The original can be found here: https://github.com/trhura/nautilus-renamer or https://launchpad.net/nautilus-renamer/+download
 * I slightly modified it to have an "Overwrite" option included.
 
 **"PDF ..."/menu.desktop:**
 * This is the *.desktop* file that creates the submenu for PDF treatment and collects all PDF actions.
-* Specifically "MimeTypes=inode/directory;audio/*;video/*;" will only always allow selection of either folders or files, never both at the same time.
 
 **FileManager-Actions (tool):**
 * A convenient tool to create context menu actions, in case you are uncomfortable with all the options to put into the *.desktop* (text) file.
@@ -99,7 +101,7 @@ If not yet installed on your system, install via:
 
 **Further reading:**
 * The *.desktop* file specification in general: https://specifications.freedesktop.org/desktop-entry-spec/latest/ and specifically https://specifications.freedesktop.org/desktop-entry-spec/latest/ar01s06.html
-* Context menues (aka custom actions) under LXQt: https://wiki.ubuntuusers.de/PCMan_File_Manager/Benutzerdefinierte_Aktionen/ (German)
+* Context menus (aka custom actions) under LXQt: https://wiki.ubuntuusers.de/PCMan_File_Manager/Benutzerdefinierte_Aktionen/ (German)
 * The FileManager-Actions tool: https://gitlab.gnome.org/GNOME/filemanager-actions, https://wiki.ubuntuusers.de/FileManager-Actions/
 * How I discovered the convenient sub-menu option: http://bernaerts.dyndns.org/linux/76-gnome/344-nautilus-new-document-creation-menu/ or <a href="sups/bernaerts-nicolas.fr.html" target="_blank">index.html backup</a> (in case the original website is offline)
   
