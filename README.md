@@ -12,26 +12,23 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
 You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston MA 02110-1301, USA.
 
-
-
+---
 **SCREENSHOTS:**
 
-PDF actions:<br/>
+**PDF actions:**<br/>
+
 <p><img src="gfx/pdf.png"></p>
 
----
+**VLC enqueue files and folders:**<br/>
 
-VLC enqueue files and folders:<br/>
 <p><img src="gfx/vlc.png"></p>
 
----
+**Mount .iso, .nrg, .bin, .img, .mdf, .sdX, ...**<br/>
 
-Mount .iso, .nrg, .bin, .img, .mdf, .sdX, ...<br/>
 <p><img src="gfx/mount.png"></p>
 
----
+**Bulk rename (pattern, substitute, case replacement):**<br/>
 
-Bulk rename (pattern, substitute, case replacement):<br/>
 <p><img src="gfx/bulk.png"></p>
 <p><img src="gfx/bulk_rename.png"></p>
 
