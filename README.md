@@ -1,6 +1,6 @@
 # PCManFM-Qt Context Menu
 
-**Various context menus (i.e. right click menus) for LXQT's file manager**
+**Various context menus (i.e. right click menus) for LXQt's file manager**
 
 Great Linux distribution: https://lxqt.org/ or https://lubuntu.me/ (which use PCManFM-Qt as file manager)
 
