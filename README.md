@@ -41,23 +41,24 @@ Send me an email or open a ticket on github.
 **INSTALLATION:**
 
 Put the relevant *.desktop* file under (create if missing):
-* Linux (all users): /usr/share/file-manager/actions/
-* Linux (current user): ~/.local/share/file-manager/actions/
+* All users: /usr/share/file-manager/actions/
+* Current user: ~/.local/share/file-manager/actions/
 
 Put the required scripts (executed by the associated *.desktop* file) under:
-* Linux (all users): /usr/share/file-manager/
-* Linux (current user): ~/.local/share/file-manager/
+* All users: /usr/share/file-manager/
+* Current user: ~/.local/share/file-manager/
 
-You might have to render the scripts executeable with "chmod +x SCRIPT" before they work. You can actually place them where you wnat, you just need to make sure to modify the "EXEC=" in the associated *.desktop* file accordingly.
+You might have to render the scripts executeable with "chmod +x SCRIPT" before they work. You can actually place them where you want, you just need to make sure to modify the "EXEC=" in the associated *.desktop* file accordingly.
 
 Restart PCManFM-Qt: killall -9 pcmanfm-qt
 
 ---
 **EXPLANATION & USAGE:**
+
 *.desktop* files are text files under Linux that generally specify a certain program executable. But they are also used for autostart topics (/etc/xdg/autostart) or for filemanager actions, often with Nautilus (GNOME) but also with PCManFM-Qt (LXQt).
 
 **Scripts:**
-* The scripts are very simply and you can modify them if required. You might even replace programs that are not on your system by your prefered alternative.
+* The scripts are very simple and you can modify them if required. You might even replace programs that are not on your system by your prefered alternative.
 * The scripts are needed due to the limitation of .desktop files wrt. the "EXEC=" parameter, which do not accept complex scripts.
 * **Note**, if you place the scripts under *~/.local/share/file-manager/* you will have to modify the path in the *.desktop* file to your profile path accordingly.
 
@@ -74,19 +75,26 @@ For the specific scripts/context menu to work, they require the following apps/p
 If not yet installed on your system, install via:
 <pre>sudo apt install ghostscript pdftk zenity poppler-utils udisksctl python3</pre>
 
-**Bulk rename:**
-* The original can be found here: https://github.com/trhura/nautilus-renamer or https://launchpad.net/nautilus-renamer/+download
-* I modified slightly it to have an overwrite option included.
+**Compact PDF actions:**
+* These are various ways to make a PDF smaller, with *ps2pdf* being the simplest one.
+* *ps2pdf* seems not to change the dpi of pictures, but simply compresses PDFs.
+* Instead, *gs/print* produces 300 dpi, *gs/ebook* 150 dpi and *gs/ebook/!* 120 dpi.
+* Just try them and take the resulting PDF that best fits your needs.
+* You can even modify the *print* and *ebook* parameter of gs/ghostscript in the script to have different options or names.
 
-**FileManager-Actions:**
+**"Bulk rename":**
+* The original can be found here: https://github.com/trhura/nautilus-renamer or https://launchpad.net/nautilus-renamer/+download
+* I slightly modified it to have an "Overwrite" option included.
+
+**FileManager-Actions (tool):**
 * A convenient tool to create context menu actions, in case you are uncomfortable with all the options to put into the *.desktop* (text) file.
 * Install: <pre>sudo apt install filemanager-actions</pre>
 
 **Further reading:**
 * The *.desktop* file specification in general: https://specifications.freedesktop.org/desktop-entry-spec/latest/ and specifically https://specifications.freedesktop.org/desktop-entry-spec/latest/ar01s06.html
 * Context menues (aka custom actions) under LXQt: https://wiki.ubuntuusers.de/PCMan_File_Manager/Benutzerdefinierte_Aktionen/ (German)
-* FileManager-Actions: https://gitlab.gnome.org/GNOME/filemanager-actions, https://wiki.ubuntuusers.de/FileManager-Actions/
-* How I discovered the sub-menu option: http://bernaerts.dyndns.org/linux/76-gnome/344-nautilus-new-document-creation-menu/ or <a href="sups/bernaerts-nicolas.fr.html" target="_blank">index.html backup</a> (in case the original website is offline)
+* The FileManager-Actions tool: https://gitlab.gnome.org/GNOME/filemanager-actions, https://wiki.ubuntuusers.de/FileManager-Actions/
+* How I discovered the convenient sub-menu option: http://bernaerts.dyndns.org/linux/76-gnome/344-nautilus-new-document-creation-menu/ or <a href="sups/bernaerts-nicolas.fr.html" target="_blank">index.html backup</a> (in case the original website is offline)
   
 **More examples:**
 * https://askubuntu.com/questions/444305/add-open-folder-as-root-to-pcman-file-managers-context-menu
