@@ -61,7 +61,7 @@ Restart PCManFM-Qt: killall -9 pcmanfm-qt
 
 **Scripts:**
 * The scripts are very simple and you can modify them if required. You might even replace programs that are not on your system by your preferred alternative.
-* The scripts are needed due to the limitation of .desktop files wrt. the "EXEC=" parameter, which do not accept complex scripts.
+* The scripts are needed due to the limitation of *.desktop* files wrt. the "EXEC=" parameter, which do not accept complex scripts.
 * **Note**, if you place the scripts under *~/.local/share/file-manager/* you will have to modify the path in the *.desktop* file to your profile path accordingly.
 
 **Dependencies:**
