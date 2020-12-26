@@ -1,8 +1,8 @@
 # PCManFM-Qt Context Menu
 
-**Context menu (right click) for LXQT's file manager**
+**Various context menus (i.e. right click menus) for LXQT's file manager**
 
-A great distribution: https://lxqt.org/ or https://lubuntu.me/
+A great Linux distribution: https://lxqt.org/ or https://lubuntu.me/
 
 Copyright © 2020 Andrew Jackson (https://github.com/ceever ... ceever@web.de)
 
@@ -89,7 +89,7 @@ If not yet installed on your system, install via:
 * The *.desktop* file specification in general: https://specifications.freedesktop.org/desktop-entry-spec/latest/ and specifically https://specifications.freedesktop.org/desktop-entry-spec/latest/ar01s06.html
 * Context menues (aka custom actions) under LXQt: https://wiki.ubuntuusers.de/PCMan_File_Manager/Benutzerdefinierte_Aktionen/ (German)
 * FileManager-Actions: https://gitlab.gnome.org/GNOME/filemanager-actions, https://wiki.ubuntuusers.de/FileManager-Actions/
-* How I discovered the sub-menu option: http://bernaerts.dyndns.org/linux/76-gnome/344-nautilus-new-document-creation-menu/ or <a href="sups/bernaerts-nicolas.fr.html" target="_blank"> (in case the original website is offline)
+* How I discovered the sub-menu option: http://bernaerts.dyndns.org/linux/76-gnome/344-nautilus-new-document-creation-menu/ or <a href="sups/bernaerts-nicolas.fr.html" target="_blank">index.html backup</a> (in case the original website is offline)
   
 **More examples:**
 * https://askubuntu.com/questions/444305/add-open-folder-as-root-to-pcman-file-managers-context-menu
