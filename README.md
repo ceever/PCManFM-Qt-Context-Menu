@@ -40,11 +40,11 @@ Send me an email or open a ticket on github.
 ---
 **INSTALLATION:**
 
-Put the relevant *.desktop* file under (create if missing):
+Put the relevant *.desktop* files (<a hred="actions/">actions folder</a> above) under (on your system, create if missing):
 * All users: /usr/share/file-manager/actions/
 * Current user: ~/.local/share/file-manager/actions/
 
-Put the required scripts (executed by the associated *.desktop* file) under:
+Put the associated scripts (<a hred="scripts/">scripts folder</a> above) under (on your system):
 * All users: /usr/share/file-manager/
 * Current user: ~/.local/share/file-manager/
 
