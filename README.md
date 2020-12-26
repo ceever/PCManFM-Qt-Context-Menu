@@ -40,11 +40,11 @@ Send me an email or open a ticket on github.
 ---
 **INSTALLATION:**
 
-Put the relevant *.desktop* files (<a hred="actions/">actions folder</a> above) onto your system (create folder if missing):
+Put the relevant *.desktop* files (<a href="actions/">actions folder</a> above) onto your system (create folder if missing):
 * All users: /usr/share/file-manager/actions/
 * Current user: ~/.local/share/file-manager/actions/
 
-Put the associated scripts (<a hred="scripts/">scripts folder</a> above) onto your system:
+Put the associated scripts (<a href="scripts/">scripts folder</a> above) onto your system:
 * All users: /usr/share/file-manager/
 * Current user: ~/.local/share/file-manager/
 
@@ -82,12 +82,16 @@ If not yet installed on your system, install via:
 * Just try them and take the resulting PDF that best fits your needs.
 * You can even modify the *print* and *ebook* parameter of gs/ghostscript in the script to have different options or names.
 
+**"Queue in VLC":**
+* We require two *.desktop* files because it is not possible to filter the selection of files and folders such that the context menu is properly displayed.
+* 
 **"Bulk rename":**
 * The original can be found here: https://github.com/trhura/nautilus-renamer or https://launchpad.net/nautilus-renamer/+download
 * I slightly modified it to have an "Overwrite" option included.
 
 **"PDF ..."/menu.desktop:**
 * This is the *.desktop* file that creates the submenu for PDF treatment and collects all PDF actions.
+* Specifically "MimeTypes=inode/directory;audio/*;video/*;" will only always allow selection of either folders or files, never both at the same time.
 
 **FileManager-Actions (tool):**
 * A convenient tool to create context menu actions, in case you are uncomfortable with all the options to put into the *.desktop* (text) file.
