@@ -65,6 +65,7 @@ Restart PCManFM-Qt: killall -9 pcmanfm-qt
 * **Note**, if you place the scripts under *~/.local/share/file-manager/* you will have to modify the path in the *.desktop* file to your profile path accordingly.
 
 **Dependencies:**
+
 For the specific scripts/context menu to work, they require the following apps/programs:
 
 * PDF: ps2pdf => **ghostscript**
