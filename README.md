@@ -92,7 +92,7 @@ If not yet installed on your system, install via:
 
 **"Bulk rename":**
 * The original can be found here: https://github.com/trhura/nautilus-renamer or https://launchpad.net/nautilus-renamer/+download
-* I slightly modified it to have an "Overwrite" option included.
+* I slightly modified it to have an "Overwrite" option included and for the file handling to work, which fails with the original code and *.desktop* files and the passed file list (%U, %F, etc.).
 
 **"PDF ..."/menu.desktop:**
 * This is the *.desktop* file that creates the submenu for PDF treatment and collects all PDF actions.
