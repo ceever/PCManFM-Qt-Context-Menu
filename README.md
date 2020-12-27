@@ -87,7 +87,8 @@ If not yet installed on your system, install via:
 
 **"Queue in VLC":**
 * We require two *.desktop* files because it is not possible to filter the selection of files and folders such that the context menu is properly displayed.
-* Specifically "MimeTypes=inode/directory;audio/*;video/*;" will only always allow selection of either folders or files, never both at the same time.
+* Specifically the following will only always allow a selection of either folders or files, never both at the same time:
+<pre>MimeTypes=inode/directory;audio/*;video/*;</pre>
 
 **"Bulk rename":**
 * The original can be found here: https://github.com/trhura/nautilus-renamer or https://launchpad.net/nautilus-renamer/+download
