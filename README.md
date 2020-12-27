@@ -97,12 +97,17 @@ If not yet installed on your system, install via:
 **"PDF ..."/menu.desktop:**
 * This is the *.desktop* file that creates the submenu for PDF treatment and collects all PDF actions.
 
+**Can I use this to modify the context menu on the LXQt Desktop?**
+* Yes, this is indeed possible!
+* The above "Queue in VLC" will already popup when (installed and) right clicking the desktop. From there modifying the filter "Basenames=" and "MimeTypes=" should lead you to the desired result.
+
 **FileManager-Actions (tool):**
 * A convenient tool to create context menu actions, in case you are uncomfortable with all the options to put into the *.desktop* (text) file.
 * Install: <pre>sudo apt install filemanager-actions</pre>
 
 **Further reading:**
-* The *.desktop* file specification in general: https://specifications.freedesktop.org/desktop-entry-spec/latest/ and specifically https://specifications.freedesktop.org/desktop-entry-spec/latest/ar01s06.html
+* The *.desktop* file specification in general (limited and technical): https://specifications.freedesktop.org/desktop-entry-spec/latest/ and specifically https://specifications.freedesktop.org/desktop-entry-spec/latest/ar01s06.html
+* Comprehensive guide incl. the (sub)menu part (specs might be outdated): https://web.archive.org/web/20180628141112/http://www.nautilus-actions.org:80/?q=node/377
 * Context menus (aka custom actions) under LXQt: https://wiki.ubuntuusers.de/PCMan_File_Manager/Benutzerdefinierte_Aktionen/ (German)
 * The FileManager-Actions tool: https://gitlab.gnome.org/GNOME/filemanager-actions, https://wiki.ubuntuusers.de/FileManager-Actions/
 * How I discovered the convenient sub-menu option: http://bernaerts.dyndns.org/linux/76-gnome/344-nautilus-new-document-creation-menu/ or <a href="sups/bernaerts-nicolas.fr.html" target="_blank">index.html backup</a> (in case the original website is offline)
