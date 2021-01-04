@@ -1,14 +1,15 @@
 [Desktop Entry]
 Type=Action
+TargetToolbar=true
 ToolbarLabel=Mount Disk/Image
 Icon=gtk-cdrom
 Name=Mount Disk/Image
-Profiles=profile-pre-v2;
+Profiles=mount;
 
-[X-Action-Profile profile-pre-v2]
+[X-Action-Profile mount]
 SelectionCount==1
-Exec=/usr/share/file-manager/mount.sh %F
-Basenames=*.iso;*.nrg;*.bin;*.img;*.mdf;*.sda;*.sdb;*.sdc;*.sdd;*.sdx;*.sdX
+Exec=/home/aj/.local/share/file-manager/mount.sh %F
+Basenames=*.iso;*.nrg;*.bin;*.img;*.mdf;*.sda*;*.sdb*;*.sdc*;*.sdd*;*.sdx*;*.sdX*;*.hda*;*.hdb*;*.hdc*;*.hdd*;*.hdx*;*.hdX*;*.sd*;*.hd*;
 Matchcase=false
 MimeTypes=all/allfiles;
 Schemes=file;
