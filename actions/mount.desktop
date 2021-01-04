@@ -8,7 +8,7 @@ Profiles=mount;
 
 [X-Action-Profile mount]
 SelectionCount==1
-Exec=/home/aj/.local/share/file-manager/mount.sh %F
+Exec=/usr/share/file-manager/mount.sh %F
 Basenames=*.iso;*.nrg;*.bin;*.img;*.mdf;*.sda*;*.sdb*;*.sdc*;*.sdd*;*.sdx*;*.sdX*;*.hda*;*.hdb*;*.hdc*;*.hdd*;*.hdx*;*.hdX*;*.sd*;*.hd*;
 Matchcase=false
 MimeTypes=all/allfiles;
