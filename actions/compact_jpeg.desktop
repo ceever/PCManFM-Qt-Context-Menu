@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Action
+TargetToolbar=true
+ToolbarLabel=Compact jpeg to 0.96
+Name=Compact jpeg to 0.96
+Icon=image-jpeg
+Profiles=foo;
+
+[X-Action-Profile foo]
+Exec=/usr/share/file-manager/compact_jpeg.sh %F
+Schemes=file;
+MimeTypes=image/jpeg;

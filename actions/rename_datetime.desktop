@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Action
+TargetToolbar=true
+ToolbarLabel=Rename to 'Date/Time Original'
+Name=Rename to 'Date/Time Original'
+Icon=image-jpeg
+Profiles=foo;
+
+[X-Action-Profile foo]
+Exec=/usr/share/file-manager/rename_datetime.sh %F
+Schemes=file;
+MimeTypes=image/jpeg;video/*;
