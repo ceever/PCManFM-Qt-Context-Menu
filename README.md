@@ -1,6 +1,6 @@
 # PCManFM-Qt (and GNOME Nautilus) Context Menu
 
-**Various context menus (i.e. right click menus aka *custom actions*) for LXQt's file manager ... also should work with Nautilus under GNOME.**
+**Various context menus (i.e. right click menus aka** *custom actions* **) for LXQt's file manager ... also should work with Nautilus under GNOME.**
 
 **Create your own (!) actions to speed up repetitive tasks or terminal commands, or simply extend your file manager with what you really need.**
 
@@ -21,19 +21,23 @@ You should have received a copy of the GNU General Public License along with thi
 
 <p><img src="gfx/pdf.png"></p>
 
+---
 **Enqueue files and folders in VLC:**<br/>
 
 <p><img src="gfx/vlc.png"></p>
 
+---
 **Mount .iso, .nrg, .bin, .img, .mdf, .sdX, ...**<br/>
 
 <p><img src="gfx/mount.png"></p>
 
+---
 **Bulk rename (pattern, substitute, case replacement):**<br/>
 
 <p><img src="gfx/bulk.png"></p>
 <p><img src="gfx/bulk_rename.png"></p>
 
+---
 **JPEG (rename based on 'Date/Time Original' EXIF tag, and compact):**<br/>
 
 <p><img src="gfx/jpeg.png"></p>
