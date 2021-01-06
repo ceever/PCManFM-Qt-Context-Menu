@@ -1,6 +1,6 @@
 # PCManFM-Qt (and GNOME Nautilus) Context Menu
 
-**Various context menus (i.e. right click menus) for LXQt's file manager ... also should work with Nautilus under GNOME.**
+**Various context menus (i.e. right click menus aka *custom actions*) for LXQt's file manager ... also should work with Nautilus under GNOME.**
 
 **Create your own (!) actions to speed up repetitive tasks or terminal commands, or simply extend your file manager with what you really need.**
 
@@ -33,6 +33,10 @@ You should have received a copy of the GNU General Public License along with thi
 
 <p><img src="gfx/bulk.png"></p>
 <p><img src="gfx/bulk_rename.png"></p>
+
+**JPEG (rename based on 'Date/Time Original' EXIF tag, and compact):**<br/>
+
+<p><img src="gfx/jpeg.png"></p>
 
 ---
 **BUGS & REQUESTS**
@@ -74,9 +78,11 @@ For the specific scripts/context menu to work, they require the following apps/p
 * PDF: count => **zenity**, **poppler-utils**
 * Mount disk => **udisksctl**
 * Bulk rename => **python3**
+* JPEG (rename) => **zenity**, **python2**
+* JPEG (compact) => **imagemagick**
 
 If not yet installed on your system, install via:
-<pre>sudo apt install ghostscript pdftk zenity poppler-utils udisksctl python3</pre>
+<pre>sudo apt install ghostscript pdftk zenity poppler-utils udisksctl python3 python2 imagemagick</pre>
 
 **Compact PDF actions:**
 * These are various ways to make a PDF smaller, with *ps2pdf* being the simplest one.
@@ -84,6 +90,9 @@ If not yet installed on your system, install via:
 * Instead, *gs/print* produces 300 dpi, *gs/ebook* 150 dpi and *gs/ebook/!* 120 dpi.
 * Just try them and take the resulting PDF that best fits your (quality) needs.
 * You can even modify the *print* and *ebook* parameter of gs/ghostscript in the script to have different options or names.
+
+**"PDF ..."/menu.desktop:**
+* This is the *.desktop* file that creates the submenu for PDF treatment and collects all PDF actions.
 
 **"Queue in VLC":**
 * We require two *.desktop* files because it is not possible to filter the selection of files and folders such that the context menu is properly displayed.
@@ -94,10 +103,13 @@ If not yet installed on your system, install via:
 * The original can be found here: https://github.com/trhura/nautilus-renamer or https://launchpad.net/nautilus-renamer/+download
 * I slightly modified it to have an "Overwrite" option included and for the file handling to work, which fails with the original code and *.desktop* files and the passed file list (%U, %F, etc.).
 
-**"PDF ..."/menu.desktop:**
-* This is the *.desktop* file that creates the submenu for PDF treatment and collects all PDF actions.
+**JPEG**:
+* The code is probably not perfect (especially relying on python), but it has worked for me now and I was too lazy to adjust it.
+* Either script creates *rename.log' and/or *compact.log* while working. Check the created *tmp* folder to see if it has finished and now new files get created.
+* *rename_datetime.sh* creates *tmp* and *missing* subfolders, where it copies the files with new name or with old name if the relevant EXIF tag is missing, respectively. It requires the *datetime_string2name+.py* Python script. This script should also work on some video files, since videos from most smartphone include the 'Date/Time Original' EXIF tag.
+* *compact_jpeg.sh* compacts JPEGs to 96% quality, using convert from the imagemagick package. It creates *tmp* subfolder, where it copies (only) those JPEGs that decreased in size (5% threshold). You can adjust the quality setting and keep-threshold in the script. After the script finished, just move the newly created JPEGs one level higher to overwrite the original files - the original file name is kept.
 
-**Can I use this to modify the context menu on the LXQt Desktop?**
+**Can I use these actions to modify the context menu on the LXQt Desktop?**
 * Yes, this is indeed possible!
 * The above "Queue in VLC" will already popup when (installed and) right clicking the desktop. From there modifying the filter "Basenames=" and "MimeTypes=" should lead you to the desired result.
 
@@ -106,6 +118,7 @@ If not yet installed on your system, install via:
 * Install: <pre>sudo apt install filemanager-actions</pre>
 
 **Further reading:**
+* Another user providing useful actions on GitHub: https://github.com/stefonarch/custom-actions
 * The *.desktop* file specification in general (limited and technical): https://specifications.freedesktop.org/desktop-entry-spec/latest/ and specifically https://specifications.freedesktop.org/desktop-entry-spec/latest/ar01s06.html
 * Comprehensive guide incl. the (sub)menu part (specs might be outdated): https://web.archive.org/web/20180628141112/http://www.nautilus-actions.org:80/?q=node/377
 * Context menus (aka custom actions) under LXQt: https://wiki.ubuntuusers.de/PCMan_File_Manager/Benutzerdefinierte_Aktionen/ (German)
