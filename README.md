@@ -43,6 +43,11 @@ You should have received a copy of the GNU General Public License along with thi
 <p><img src="gfx/jpeg.png"></p>
 
 ---
+**Send with Thunderbird:**<br/>
+
+<p><img src="gfx/thunderbird.png"></p>
+
+---
 **BUGS & REQUESTS**
 
 Send me an email or open a ticket on github.
@@ -84,9 +89,10 @@ For the specific scripts/context menu to work, they require the following apps/p
 * Bulk rename => **python3**
 * JPEG (rename) => **zenity**, **python2**
 * JPEG (compact) => **imagemagick**
+* Send with Thunderbird => **thunderbird**
 
 If not yet installed on your system, install via:
-<pre>sudo apt install ghostscript pdftk zenity poppler-utils udisksctl python3 python2 imagemagick</pre>
+<pre>sudo apt install ghostscript pdftk zenity poppler-utils udisksctl python3 python2 imagemagick thunderbird</pre>
 
 **Compact PDF actions:**
 * These are various ways to make a PDF smaller, with *ps2pdf* being the simplest one.
@@ -112,6 +118,10 @@ If not yet installed on your system, install via:
 * Either script creates *rename.log' and/or *compact.log* while working. Check the created *tmp* folder to see if it has finished and now new files get created.
 * *rename_datetime.sh* creates *tmp* and *missing* subfolders, where it copies the files with new name or with old name if the relevant EXIF tag is missing, respectively. It requires the *datetime_string2name+.py* Python script. This script should also work on some video files, since videos from most smartphone include the 'Date/Time Original' EXIF tag.
 * *compact_jpeg.sh* compacts JPEGs to 96% quality, using convert from the imagemagick package. It creates *tmp* subfolder, where it copies (only) those JPEGs that decreased in size (5% threshold). You can adjust the quality setting and keep-threshold in the script. After the script finished, just move the newly created JPEGs one level higher to overwrite the original files - the original file name is kept.
+
+**Send with Thunderbird**:
+* Inspired by https://github.com/stefonarch/custom-actions
+* Modified so it can handle several files as attachements. (At least it works for me, drop me a email if not for you.)
 
 **Can I use these actions to modify the context menu on the LXQt Desktop?**
 * Yes, this is indeed possible!
