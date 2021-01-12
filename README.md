@@ -127,17 +127,9 @@ If not yet installed on your system, install via:
 * *resize_image.sh* creates a new image of half the original's resolution and strips the EXIF (and probably other) meta data. This is advantageous in case you want to share the file with strangers or data leeches. This should probably be extended by an arbitrary file name option.
 
 **"Send to ..."/menu_send.desktop:**
-* "Bluetooth":
-:* Resolves symbolic links and collects files from selected directories.
-:* To have the advantageous behavious of mobiles also on desktop machines, I believed this was a good idea.
-:* Such "Sent to ..." commands can probably also include WhatsApp, etc. At the moment I could not think of any others.
-* "Desktop (shortcut)":
-:* Inspired by Windows and probably missed by many people that switch to Linux.
-:* Handles files and folders.
-* "Email (attachment)":
-:* Inspired by https://github.com/stefonarch/custom-actions
-:* Modified so it can handle several files, directories and symbolic link directories - all is attached.
-:* The relevant script requires perl. Unfortunately, this was the only way to produce proper url-encoded file-path names. The program urlencode itself does not handle umlauts properly.
+* "Bluetooth": Resolves symbolic links and collects files from selected directories. To have the advantageous behaviours of mobiles also on desktop machines, I believed this was a good idea. Such "Sent to ..." commands can probably also include WhatsApp, etc. Currently, I could not think of any others.
+* "Desktop (shortcut)": Inspired by Windows and probably missed by many people that switch to Linux. It handles files and folders.
+* "Email (attachment)": Inspired by https://github.com/stefonarch/custom-actions . Modified so it can handle several files, directories and symbolic link directories - all is attached. The relevant script requires perl. Unfortunately, this was the only way to produce proper url-encoded file-path names. The program urlencode itself does not handle umlauts properly.
 
 **Can I use these actions to modify the context menu on the LXQt Desktop?**
 * Yes, this is indeed possible!
