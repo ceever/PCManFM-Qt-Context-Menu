@@ -25,8 +25,8 @@ do
 		STRG=`exiftool "$fo" | grep "Date/Time Original"`
 		if [ -n "$STRG" ]
 		then
-			NAME1=`echo $STRG | python "$SDIR/datetime_string2name+.py" $SHIFT`
-			NAME2=`echo $STRG | python "$SDIR/datetime_string2name+.py" $(bc <<< "scale=6; $SHIFT+0.00028")`
+			NAME1=`echo $STRG | python2 "$SDIR/datetime_string2name+.py" $SHIFT`
+			NAME2=`echo $STRG | python2 "$SDIR/datetime_string2name+.py" $(bc <<< "scale=6; $SHIFT+0.00028")`
 		else
 			NAME1=
 			NAME2=
