@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Menu
+Icon=pdfeditor
+Name[C]=PDF ...
+Tooltip[C]=PDF ...
+ItemsList=gs_ebook_small;gs_ebook;gs_print;ps2pdf;page_count;rotate_left;rotate_right;
