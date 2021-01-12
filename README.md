@@ -38,14 +38,14 @@ You should have received a copy of the GNU General Public License along with thi
 <p><img src="gfx/bulk_rename.png"></p>
 
 ---
-**JPEG (rename based on 'Date/Time Original' EXIF tag, and compact):**<br/>
+**Image actions (rename (EXIF: 'Date/Time Original'), compress and resize&strip):**<br/>
 
 <p><img src="gfx/jpeg.png"></p>
 
 ---
-**Send with Thunderbird:**<br/>
+**Send to:**<br/>
 
-<p><img src="gfx/thunderbird.png"></p>
+<p><img src="gfx/sentto.png"></p>
 
 ---
 **BUGS & REQUESTS**
@@ -70,7 +70,11 @@ Restart PCManFM-Qt: killall -9 pcmanfm-qt
 ---
 **EXPLANATION & USAGE:**
 
-*.desktop* files are text files under Linux that generally specify a certain program executable. But they are also used for autostart topics (/etc/xdg/autostart) or for file manager actions, often with Nautilus (GNOME) but also with PCManFM-Qt (LXQt).
+**.desktop files:**
+* *.desktop* files are text files under Linux that generally specify a certain program executable. But they are also used for autostart topics (/etc/xdg/autostart) or for file manager actions, often with Nautilus (GNOME) but also with PCManFM-Qt (LXQt).
+* You may adjust the "ICON=" property according to which is available in your system. You can actually also place an icon into /usr/share/file-manager/(icons/) and reference it.
+* If you want to place the below scripts anywhere else, you have to modify the path in the relevant *.desktop* file.
+* Submenus are created automatically if a *.desktop* file is created with some other *.desktop* file's (actual) file name in the menu's action list. If you delete the menu *.desktop* file, all underlying actions are moved to the main context menu.
 
 **Scripts:**
 * The scripts are very simple and you can modify them if required. You might even replace programs that are not on your system by your preferred alternative.
@@ -89,20 +93,22 @@ For the specific scripts/context menu to work, they require the following apps/p
 * Bulk rename => **python3**
 * JPEG (rename) => **zenity**, **python2**
 * JPEG (compact) => **imagemagick**
-* Send with Thunderbird => **thunderbird**
+* Send to: Bluetooth => **blueman**
+* Send to: Email => **thunderbird**, **perl**
 
 If not yet installed on your system, install via:
-<pre>sudo apt install ghostscript pdftk zenity poppler-utils udisksctl python3 python2 imagemagick thunderbird</pre>
+<pre>sudo apt install ghostscript pdftk zenity poppler-utils udisksctl python3 python2 imagemagick blueman thunderbird perl</pre>
 
 **Compact PDF actions:**
 * These are various ways to make a PDF smaller, with *ps2pdf* being the simplest one.
-* *ps2pdf* seems not to change the dpi of pictures, but simply compresses PDFs.
+* *ps2pdf* seems not to change the dpi of pictures, but simply compresses the contained pictures.
 * Instead, *gs/print* produces 300 dpi, *gs/ebook* 150 dpi and *gs/ebook/!* 120 dpi.
 * Just try them and take the resulting PDF that best fits your (quality) needs.
 * You can even modify the *print* and *ebook* parameter of gs/ghostscript in the script to have different options or names.
 
-**"PDF ..."/menu.desktop:**
+**"PDF ..."/menu_pdf.desktop:**
 * This is the *.desktop* file that creates the submenu for PDF treatment and collects all PDF actions.
+* All PDF actions create new files with an according (extended) extension: .sml, .left, .right
 
 **"Queue in VLC":**
 * We require two *.desktop* files because it is not possible to filter the selection of files and folders such that the context menu is properly displayed.
@@ -113,15 +119,25 @@ If not yet installed on your system, install via:
 * The original can be found here: https://github.com/trhura/nautilus-renamer or https://launchpad.net/nautilus-renamer/+download
 * I slightly modified it to have an "Overwrite" option included and for the file handling to work, which fails with the original code and *.desktop* files and the passed file list (%U, %F, etc.).
 
-**JPEG**:
+**"Image ..."/menu_image.desktop:**
 * The code is probably not perfect (especially relying on python), but it has worked for me now and I was too lazy to adjust it.
 * Either script creates *rename.log' and/or *compact.log* while working. Check the created *tmp* folder to see if it has finished and now new files get created.
 * *rename_datetime.sh* creates *tmp* and *missing* subfolders, where it copies the files with new name or with old name if the relevant EXIF tag is missing, respectively. It requires the *datetime_string2name+.py* Python script. This script should also work on some video files, since videos from most smartphone include the 'Date/Time Original' EXIF tag.
 * *compact_jpeg.sh* compacts JPEGs to 96% quality, using convert from the imagemagick package. It creates *tmp* subfolder, where it copies (only) those JPEGs that decreased in size (5% threshold). You can adjust the quality setting and keep-threshold in the script. After the script finished, just move the newly created JPEGs one level higher to overwrite the original files - the original file name is kept.
+* *resize_image.sh* creates a new image of half the original's resolution and strips the EXIF (and probably other) meta data. This is advantageous in case you want to share the file with strangers or data leeches. This should probably be extended by an arbitrary file name option.
 
-**Send with Thunderbird**:
-* Inspired by https://github.com/stefonarch/custom-actions
-* Modified so it can handle several files as attachements. (At least it works for me, drop me a email if not for you.)
+**"Send to ..."/menu_send.desktop:**
+* "Bluetooth":
+:* Resolves symbolic links and collects files from selected directories.
+:* To have the advantageous behavious of mobiles also on desktop machines, I believed this was a good idea.
+:* Such "Sent to ..." commands can probably also include WhatsApp, etc. At the moment I could not think of any others.
+* "Desktop (shortcut)":
+:* Inspired by Windows and probably missed by many people that switch to Linux.
+:* Handles files and folders.
+* "Email (attachment)":
+:* Inspired by https://github.com/stefonarch/custom-actions
+:* Modified so it can handle several files, directories and symbolic link directories - all is attached.
+:* The relevant script requires perl. Unfortunately, this was the only way to produce proper url-encoded file-path names. The program urlencode itself does not handle umlauts properly.
 
 **Can I use these actions to modify the context menu on the LXQt Desktop?**
 * Yes, this is indeed possible!
