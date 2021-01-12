@@ -9,7 +9,7 @@ Profiles=mount;
 [X-Action-Profile mount]
 SelectionCount==1
 Exec=/usr/share/file-manager/mount.sh %F
-Basenames=*.iso;*.nrg;*.bin;*.img;*.mdf;*.sda*;*.sdb*;*.sdc*;*.sdd*;*.sdx*;*.sdX*;*.hda*;*.hdb*;*.hdc*;*.hdd*;*.hdx*;*.hdX*;*.sd*;*.hd*;
+Basenames=*.iso;*.nrg;*.bin;*.img;*.mdf;*.sda*;*.sdb*;*.sdc*;*.sdd*;*.sdx*;*.hda*;*.hdb*;*.hdc*;*.hdd*;*.hdx*;*.sd*;*.hd*;
 Matchcase=false
 MimeTypes=all/allfiles;
 Schemes=file;

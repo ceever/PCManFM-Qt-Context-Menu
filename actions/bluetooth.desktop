@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Action
+TargetToolbar=true
+ToolbarLabel=Bluetooth
+Name=Bluetooth
+Icon=bluetooth
+Profiles=foo;
+
+[X-Action-Profile foo]
+Exec=/usr/share/file-manager/bluetooth.sh %F

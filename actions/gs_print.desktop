@@ -3,7 +3,7 @@ Type=Action
 TargetToolbar=true
 ToolbarLabel=Compact: gs/print
 Name=Compact: gs/print
-Icon=pdfeditor
+Icon=simple-image-reducer
 Profiles=printer;
 
 [X-Action-Profile printer]

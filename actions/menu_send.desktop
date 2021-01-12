@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Menu
+Icon=send-to
+Name[C]=Send to ...
+Tooltip[C]=Send to ...
+ItemsList=bluetooth;desktop-shortcut;email;

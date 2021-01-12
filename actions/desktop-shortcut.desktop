@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Action
+TargetToolbar=true
+ToolbarLabel=Desktop (shortcut)
+Name=Desktop (shortcut)
+Icon=emblem-symbolic-link
+Profiles=foo;
+
+[X-Action-Profile foo]
+Exec=/usr/share/file-manager/desktop-shortcut.sh %F

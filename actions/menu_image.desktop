@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Menu
+Icon=image-jpeg
+Name[C]=Image ...
+Tooltip[C]=Image ...
+ItemsList=compact_jpeg;rename_datetime;resize_image;

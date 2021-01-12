@@ -1,9 +1,9 @@
 [Desktop Entry]
 Type=Action
 TargetToolbar=true
-ToolbarLabel=Compact jpeg to 0.96
-Name=Compact jpeg to 0.96
-Icon=image-jpeg
+ToolbarLabel=Compact JPG to 0.96
+Name=Compact JPG to 0.96
+Icon=simple-image-reducer
 Profiles=foo;
 
 [X-Action-Profile foo]

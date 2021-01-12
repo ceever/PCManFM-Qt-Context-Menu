@@ -3,7 +3,7 @@ Type=Action
 TargetToolbar=true
 ToolbarLabel=Rename to 'Date/Time Original'
 Name=Rename to 'Date/Time Original'
-Icon=image-jpeg
+Icon=gprename
 Profiles=foo;
 
 [X-Action-Profile foo]

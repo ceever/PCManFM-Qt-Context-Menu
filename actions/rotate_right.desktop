@@ -3,7 +3,7 @@ Type=Action
 TargetToolbar=true
 ToolbarLabel=Rotate: right
 Name=Rotate: right
-Icon=pdfeditor
+Icon=object-rotate-right
 Profiles=pdftk;
 
 [X-Action-Profile pdftk]

@@ -3,7 +3,7 @@ Type=Action
 TargetToolbar=true
 ToolbarLabel=Compact: ps2pdf
 Name=Compact: ps2pdf
-Icon=pdfeditor
+Icon=simple-image-reducer
 Profiles=ps2pdf;
 
 [X-Action-Profile ps2pdf]

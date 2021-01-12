@@ -1,9 +1,9 @@
 [Desktop Entry]
 Type=Action
 TargetToolbar=true
-ToolbarLabel=Compact: gs/print/!
-Name=Compact: gs/print/!
-Icon=pdfeditor
+ToolbarLabel=Compact: gs/ebook/!
+Name=Compact: gs/ebook/!
+Icon=simple-image-reducer
 Profiles=ebook_small;
 
 [X-Action-Profile ebook_small]

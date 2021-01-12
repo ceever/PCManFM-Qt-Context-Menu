@@ -3,7 +3,7 @@ Type=Action
 TargetToolbar=true
 ToolbarLabel=Compact: gs/ebook
 Name=Compact: gs/ebook
-Icon=pdfeditor
+Icon=simple-image-reducer
 Profiles=ebook;
 
 [X-Action-Profile ebook]

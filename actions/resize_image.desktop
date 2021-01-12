@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Action
+TargetToolbar=true
+ToolbarLabel=Resize ½ && strip
+Name=Resize ½ && strip
+Icon=itmages-resize
+Profiles=foo;
+
+[X-Action-Profile foo]
+Exec=/usr/share/file-manager/resize_image.sh %F
+Schemes=file;
+MimeTypes=image/*;
