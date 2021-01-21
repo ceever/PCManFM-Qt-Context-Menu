@@ -78,7 +78,7 @@ Restart PCManFM-Qt: killall -9 pcmanfm-qt
 
 **Scripts:**
 * The scripts are very simple and you can modify them if required. You might even replace programs that are not on your system by your preferred alternative.
-* The scripts are needed due to the limitation of *.desktop* files wrt. the "EXEC=" parameter, which do not accept complex scripts.
+* The scripts are needed due to the limitation of *.desktop* files wrt. the "EXEC=" parameter, which do not accept complex commands.
 * **Note**, if you place the scripts under *~/.local/share/file-manager/* you will have to modify the path in the *.desktop* file to your profile path accordingly.
 
 **Dependencies:**
@@ -91,13 +91,13 @@ For the specific scripts/context menu to work, they require the following apps/p
 * PDF: count => **zenity**, **poppler-utils**
 * Mount disk => **udisksctl**
 * Bulk rename => **python3**
-* JPEG (rename) => **zenity**, **python2**
+* JPEG (rename) => **zenity**, **python2**, **libimage-exiftool-perl**
 * JPEG (compact) => **imagemagick**
 * Send to: Bluetooth => **blueman**
 * Send to: Email => **thunderbird**, **perl**
 
 If not yet installed on your system, install via:
-<pre>sudo apt install ghostscript pdftk zenity poppler-utils udisksctl python3 python2 imagemagick blueman thunderbird perl</pre>
+<pre>sudo apt install ghostscript pdftk zenity poppler-utils udisksctl python3 python2 libimage-exiftool-perl imagemagick blueman thunderbird perl</pre>
 
 **Compact PDF actions:**
 * These are various ways to make a PDF smaller, with *ps2pdf* being the simplest one.
@@ -121,10 +121,23 @@ If not yet installed on your system, install via:
 
 **"Image ..."/menu_image.desktop:**
 * The code is probably not perfect (especially relying on python), but it has worked for me now and I was too lazy to adjust it.
-* Either script creates *rename.log' and/or *compact.log* while working. Check the created *tmp* folder to see if it has finished and now new files get created.
-* *rename_datetime.sh* creates *tmp* and *missing* subfolders, where it copies the files with new name or with old name if the relevant EXIF tag is missing, respectively. It requires the *datetime_string2name+.py* Python script. This script should also work on some video files, since videos from most smartphone include the 'Date/Time Original' EXIF tag.
-* *compact_jpeg.sh* compacts JPEGs to 96% quality, using convert from the imagemagick package. It creates *tmp* subfolder, where it copies (only) those JPEGs that decreased in size (5% threshold). You can adjust the quality setting and keep-threshold in the script. After the script finished, just move the newly created JPEGs one level higher to overwrite the original files - the original file name is kept.
-* *resize_image.sh* creates a new image of half the original's resolution and strips the EXIF (and probably other) meta data. This is advantageous in case you want to share the file with strangers or data leeches. This should probably be extended by an arbitrary file name option.
+* Either script creates *rename.log' and/or *compact.log* while executing. Check the created *tmp* folder to see if it has finished and now new files get created.
+
+*rename_datetime.sh*:
+* It creates *tmp* and *missing* subfolders, where it copies the files with new name or with old name if the relevant EXIF tag is missing, respectively.
+* It requires the *datetime_string2name+.py* Python script.
+* **It supports time delay** for you to adjust mismatched datetime meta data.
+* **It also supports video files** if *exiftool* can find relevant meta information - most videos from smartphones include such EXIF (like) tag. If the default EXIF key (*Date/Time Original*) is not found, the script will ask you to provide an alternative from what it found in the relevant file.
+
+*compact_jpeg.sh*:
+* It compacts JPEGs to 96% quality, using *convert* of the imagemagick graphic package.
+* It creates *tmp* subfolder, where it copies (only) those JPEGs that decreased in size (5% threshold).
+* You can adjust the quality setting and keep-threshold in the script.
+* After the script has finished, just move the newly created JPEGs one level higher to overwrite the original files - the original file name is kept.
+
+*resize_image.sh*:
+* It creates a new image of half the original's resolution and strips the EXIF (and probably other) meta data.
+* This is advantageous in case you want to share the file with strangers or data leeches. This should probably be extended by an arbitrary file name option.
 
 **"Send to ..."/menu_send.desktop:**
 * "Bluetooth": Resolves symbolic links and collects files from selected directories. To have the advantageous behaviours of mobiles also on desktop machines, I believed this was a good idea. Such "Sent to ..." commands can probably also include WhatsApp, etc. Currently, I could not think of any others.
