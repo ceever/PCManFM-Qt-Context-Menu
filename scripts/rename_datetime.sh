@@ -76,10 +76,10 @@ do
 			cp -n "$fo" tmp/$NAME2
 			continue
 		fi
-		echo -n " ... file tmp/$NAME1 (and next: tmp/$NAME2) exist(s)! Provide name (with extension): "
-		read NAME2
+		NAME2="`zenity --entry --title="File name warning" --text="File tmp/${NAME1/_/__} (and next: tmp/${NAME2/_/__}) exist(s)!\n\nProvide alternative name (with extension, no folder):"`"
+		if [ 1 -eq $? ]; then exit; fi
 		if [ -f "tmp/$NAME2" ]; then echo "tmp/$NAME2 seems to exist (4) ... thus, the upcoming 'cp' will probably not execute successfully."; fi
-		cp -n "$fo" tmp/$NAME2;
+		cp -n "$fo" "tmp/$NAME2";
 	fi
 done
 
