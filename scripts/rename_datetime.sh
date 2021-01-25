@@ -19,18 +19,25 @@ fi
 mkdir -p "tmp"
 mkdir -p "missing"
 
-SEARCH="Date/Time Original"
+ORIG_SEARCH="Date/Time Original"
+SEARCH=
 
 for fo in "$@"
 do
 	if [ -f "$fo" ]
 	then
-		STRG=`exiftool "$fo" | grep "$SEARCH"`
+		STRG=`exiftool "$fo" | grep "$ORIG_SEARCH"`
 		if [ -z "$STRG" ]
 		then
-			SEARCH=`zenity --entry --title="Rename warning" --text="'$SEARCH' was not found, but we have found\nthe following EXIF 'Date' pairs (key : value):\n\n$(exiftool "$fo" | grep Date)\n\nPlease provide the key to use (for 'grep', mind duplication but use 'Date'!).\n\nNote, this selection will be used for all following files.\n\nKey to search/use:"`
-			if [ 1 -eq $? ]; then exit; fi
-			STRG="`exiftool "$fo" | grep "$SEARCH"`"
+			if [[ -z "$STRG" ]] && [[ -z "$SEARCH" ]]
+			then
+				SEARCH=`zenity --entry --title="Rename warning" --text="'$ORIG_SEARCH' was not found, but we have found the following\nEXIF 'Date' pairs (key : value):\n\n$(exiftool "$fo" | grep Date)\n\nPlease provide the key to use (for 'grep', mind duplication and always use 'Date'!).\n\nNote, this will be used for all following files, in case '$ORIG_SEARCH' cannot be found.\nUse an arbitrary random string to proactively copy all such files into 'missing/'.\n\nKey to search/use:"`
+				if [ 1 -eq $? ]; then exit; fi
+			fi
+			if [ -n "$SEARCH" ]
+			then
+				STRG="`exiftool "$fo" | grep "$SEARCH"`"
+			fi
 		fi
 		
 		EXT="${fo##*.}"
