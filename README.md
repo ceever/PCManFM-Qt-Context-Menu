@@ -45,7 +45,7 @@ You should have received a copy of the GNU General Public License along with thi
 ---
 **Send to:**<br/>
 
-<p><img src="gfx/sentto.png"></p>
+<p><img src="gfx/sendto.png"></p>
 
 ---
 **BUGS & REQUESTS**
@@ -60,8 +60,8 @@ Put the relevant *.desktop* files (<a href="actions/">actions folder</a> above) 
 * Current user: ~/.local/share/file-manager/actions/
 
 Put the associated scripts (<a href="scripts/">scripts folder</a> above) onto your system:
-* All users: /usr/share/file-manager/
-* Current user: ~/.local/share/file-manager/
+* All users: /usr/share/file-manager/scripts/
+* Current user: ~/.local/share/file-manager/scripts/
 
 **Note**, you might have to render the scripts executable with "chmod +x SCRIPT" before they work. You can actually place them where you want, you just need to make sure to modify the "EXEC=" in the associated *.desktop* file accordingly.
 
@@ -95,9 +95,10 @@ For the specific scripts/context menu to work, they require the following apps/p
 * JPEG (compact) => **imagemagick**
 * Send to: Bluetooth => **blueman**
 * Send to: Email => **thunderbird**, **perl**
+* Send to: 7z archive => **p7zip-full**
 
 If not yet installed on your system, install via:
-<pre>sudo apt install ghostscript pdftk zenity poppler-utils udisksctl python3 python2 libimage-exiftool-perl imagemagick blueman thunderbird perl</pre>
+<pre>sudo apt install ghostscript pdftk zenity poppler-utils udisksctl python3 python2 libimage-exiftool-perl imagemagick blueman thunderbird perl p7zip-full</pre>
 
 **Compact PDF actions:**
 * These are various ways to make a PDF smaller, with *ps2pdf* being the simplest one.
@@ -143,6 +144,7 @@ If not yet installed on your system, install via:
 * "Bluetooth": Resolves symbolic links and collects files from selected directories. To have the advantageous behaviours of mobiles also on desktop machines, I believed this was a good idea. Such "Sent to ..." commands can probably also include WhatsApp, etc. Currently, I could not think of any others.
 * "Desktop (shortcut)": Inspired by Windows and probably missed by many people that switch to Linux. It handles files and folders.
 * "Email (attachment)": Inspired by https://github.com/stefonarch/custom-actions . Modified so it can handle several files, directories and symbolic link directories - all is attached. The relevant script requires perl. Unfortunately, this was the only way to produce proper url-encoded file-path names. The program urlencode itself does not handle umlauts properly.
+* 7z archive": Uses maximal compression, see script. Script not that nice, because we have to cover for file names with spaces and the input input list. 
 
 **Can I use these actions to modify the context menu on the LXQt Desktop?**
 * Yes, this is indeed possible!
