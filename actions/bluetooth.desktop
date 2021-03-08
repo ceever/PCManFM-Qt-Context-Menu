@@ -7,4 +7,4 @@ Icon=bluetooth
 Profiles=foo;
 
 [X-Action-Profile foo]
-Exec=/usr/share/file-manager/bluetooth.sh %F
+Exec=/usr/share/file-manager/scripts/bluetooth.sh %F

@@ -7,4 +7,4 @@ Icon=thunderbird
 Profiles=foo;
 
 [X-Action-Profile foo]
-Exec=/usr/share/file-manager/email.sh %F
+Exec=/usr/share/file-manager/scripts/email.sh %F

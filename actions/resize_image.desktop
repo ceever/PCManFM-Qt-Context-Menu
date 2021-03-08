@@ -7,6 +7,6 @@ Icon=itmages-resize
 Profiles=foo;
 
 [X-Action-Profile foo]
-Exec=/usr/share/file-manager/resize_image.sh %F
+Exec=/usr/share/file-manager/scripts/resize_image.sh %F
 Schemes=file;
 MimeTypes=image/*;

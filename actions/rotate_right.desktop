@@ -7,6 +7,6 @@ Icon=object-rotate-right
 Profiles=pdftk;
 
 [X-Action-Profile pdftk]
-Exec=/usr/share/file-manager/pdftk_rotate.sh right %F
+Exec=/usr/share/file-manager/scripts/pdftk_rotate.sh right %F
 Schemes=file;
 MimeTypes=application/pdf;

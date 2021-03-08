@@ -7,4 +7,4 @@ Icon=emblem-symbolic-link
 Profiles=foo;
 
 [X-Action-Profile foo]
-Exec=/usr/share/file-manager/desktop-shortcut.sh %F
+Exec=/usr/share/file-manager/scripts/desktop-shortcut.sh %F

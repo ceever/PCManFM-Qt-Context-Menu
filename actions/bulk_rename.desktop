@@ -8,4 +8,4 @@ Profiles=foo;
 
 [X-Action-Profile foo]
 SelectionCount=>1
-Exec=python3 /usr/share/file-manager/bulk_renamer.py %F
+Exec=python3 /usr/share/file-manager/scripts/bulk_renamer.py %F

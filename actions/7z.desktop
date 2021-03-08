@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Action
+TargetToolbar=true
+ToolbarLabel=7z archive
+Name=7z archive
+Icon=7z
+Profiles=foo;
+
+[X-Action-Profile foo]
+Exec=/usr/share/file-manager/scripts/7z.sh %F

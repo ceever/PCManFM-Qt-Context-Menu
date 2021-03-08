@@ -7,6 +7,6 @@ Icon=pdfchain
 Profiles=foobar;
 
 [X-Action-Profile foobar]
-Exec=/usr/share/file-manager/page_count.sh %F
+Exec=/usr/share/file-manager/scripts/page_count.sh %F
 Schemes=file;
 MimeTypes=application/pdf;
