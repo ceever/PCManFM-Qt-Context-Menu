@@ -7,5 +7,5 @@ Icon=vlc
 Profiles=foobar;
 
 [X-Action-Profile foobar]
-Exec=vlc %F
+Exec=vlc --started-from-file %U
 MimeTypes=inode/directory;
