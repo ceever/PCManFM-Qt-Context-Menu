@@ -6,7 +6,7 @@
 
 Great Linux distribution: https://lxqt.org/ or https://lubuntu.me/ (which use PCManFM-Qt as file manager)
 
-Copyright © 2020 Andrew Jackson (https://github.com/ceever ... ceever@web.de)
+Copyright © 2022 Andrew Jackson (https://github.com/ceever ... ceever@web.de)
 
 This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
 
@@ -106,6 +106,9 @@ For the specific scripts/context menu to work, they require the following apps/p
 If not yet installed on your system, install via:
 <pre>sudo apt install ghostscript pdftk zenity poppler-utils udisksctl python3 python2 libimage-exiftool-perl imagemagick blueman thunderbird perl p7zip-full</pre>
 
+---
+**THE ACTIONS:**
+
 **Compact PDF actions:**
 * These are various ways to make a PDF smaller, with *ps2pdf* being the simplest one.
 * *ps2pdf* seems not to change the dpi of pictures, but simply compresses the contained pictures.
@@ -159,6 +162,7 @@ If not yet installed on your system, install via:
 * It also has a 10 sec timeout (to act on a stuck 7z)—in case your archive is too large, this needs to be adjusted.
 * In case you are happy with the already existing "Extract here" of your file browser, you can exclude these cases by reducing the mimetypes in the action file.
 
+---
 **Can I use these actions to modify the context menu on the LXQt Desktop?**
 * Yes, this is indeed possible!
 * The above "Queue in VLC" will already popup when (installed and) right clicking the desktop. From there modifying the filter "Basenames=" and "MimeTypes=" should lead you to the desired result.
