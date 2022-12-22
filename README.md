@@ -48,6 +48,11 @@ You should have received a copy of the GNU General Public License along with thi
 <p><img src="gfx/sendto.png"></p>
 
 ---
+**Exract here (quick & dirty). Error message in case of failure:**<br/>
+
+<p><img src="gfx/extract_here.png"></p>
+
+---
 **BUGS & REQUESTS**
 
 Send me an email or open a ticket on github.
@@ -96,6 +101,7 @@ For the specific scripts/context menu to work, they require the following apps/p
 * Send to: Bluetooth => **blueman**
 * Send to: Email => **thunderbird**, **perl**
 * Send to: 7z archive => **p7zip-full**
+* Extract here => **p7zip-full**, **zenity**
 
 If not yet installed on your system, install via:
 <pre>sudo apt install ghostscript pdftk zenity poppler-utils udisksctl python3 python2 libimage-exiftool-perl imagemagick blueman thunderbird perl p7zip-full</pre>
@@ -145,6 +151,13 @@ If not yet installed on your system, install via:
 * "Desktop (shortcut)": Inspired by Windows and probably missed by many people that switch to Linux. It handles files and folders.
 * "Email (attachment)": Inspired by https://github.com/stefonarch/custom-actions . Modified so it can handle several files, directories and symbolic link directories - all is attached. The relevant script requires perl. Unfortunately, this was the only way to produce proper url-encoded file-path names. The program urlencode itself does not handle umlauts properly.
 * 7z archive": Uses maximal compression, see script. Script not that nice, because we have to cover for file names with spaces and the input input list. 
+
+**Extract here** (extract_here.sh):
+* Since LXQt does not support the "Extract here" option for all kinds of types of archives.
+* This extracts extracts everything 7z (command line) supports.
+* It is quick and dirty, and does not support passwords.
+* It also has a 10 sec timeout (to act on a stuck 7z)—in case your archive is too large, this needs to be adjusted.
+* In case you are happy with the already existing "Extract here" of your file browser, you can exclude these cases by reducing the mimetypes in the action file.
 
 **Can I use these actions to modify the context menu on the LXQt Desktop?**
 * Yes, this is indeed possible!
