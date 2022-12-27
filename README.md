@@ -1,4 +1,4 @@
-# PCManFM-Qt (and GNOME Nautilus) Context Menu
+# LXQt/Lubuntu PCManFM-Qt (and GNOME Nautilus) Context Menu
 
 **Various context menus (i.e. right click menus aka** *custom actions* **) for LXQt's file manager ... also should work with Nautilus under GNOME.**
 
@@ -6,7 +6,7 @@
 
 Great Linux distribution: https://lxqt.org/ or https://lubuntu.me/ (which use PCManFM-Qt as file manager)
 
-Copyright © 2022 Andrew Jackson (https://github.com/ceever ... ceever@web.de)
+Copyright © 2022 Andrew Jackson (https://github.com/ceever)
 
 This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
 
