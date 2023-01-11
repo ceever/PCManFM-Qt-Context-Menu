@@ -4,7 +4,7 @@ cd "`dirname "$1"`"
 ### Everything below will go to the file 'rename.log':
 exec 3>&1 4>&2
 trap 'exec 2>&4 1>&3' 0 1 2 3
-exec 1>rename.log 2>&1
+exec 1>>rename.log 2>&1
 ###
 
 SDIR=`dirname "$0"`
@@ -26,12 +26,13 @@ for fo in "$@"
 do
 	if [ -f "$fo" ]
 	then
+		echo "#$(basename "$fo")" && sleep 0.1
 		STRG=`exiftool "$fo" | grep "$ORIG_SEARCH"`
 		if [ -z "$STRG" ]
 		then
 			if [[ -z "$STRG" ]] && [[ -z "$SEARCH" ]]
 			then
-				SEARCH=`zenity --entry --title="Rename warning" --text="'$ORIG_SEARCH' was not found, but we have found the following\nEXIF 'Date' pairs (key : value):\n\n$(exiftool "$fo" | grep Date)\n\nPlease provide the key to use (for 'grep', mind duplication and always use 'Date'!).\n\nNote, this will be used for all following files, in case '$ORIG_SEARCH' cannot be found.\nUse an arbitrary random string to proactively copy all such files into 'missing/'.\n\nKey to search/use:"`
+				SEARCH=`zenity --entry --title="Rename warning ($(basename "$fo"))" --text="'$ORIG_SEARCH' was not found, but we have found the following\nEXIF 'Date' pairs (key : value):\n\n$(exiftool "$fo" | grep Date)\n\nPlease provide the key to use (for 'grep', mind duplication and always use 'Date'!).\n\nNote, this will be used for all following files, in case '$ORIG_SEARCH' cannot be found.\nUse an arbitrary random string to proactively copy all such files into 'missing/'.\n\nKey to search/use:"`
 				if [ 1 -eq $? ]; then exit; fi
 			fi
 			if [ -n "$SEARCH" ]
@@ -81,8 +82,6 @@ do
 		if [ -f "tmp/$NAME2" ]; then echo "tmp/$NAME2 seems to exist (4) ... thus, the upcoming 'cp' will probably not execute successfully."; fi
 		cp -n "$fo" "tmp/$NAME2";
 	fi
-done
+done | tee >(zenity --progress --pulsate --auto-close --title="Date/time rename" --text="...")
 
-#echo -ne "\nFinished? Press <ENTER>: "
-#read ttt
 exit
