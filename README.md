@@ -6,7 +6,7 @@
 
 Great Linux distribution: https://lxqt.org/ or https://lubuntu.me/ (which use PCManFM-Qt as file manager)
 
-Copyright © 2022 Andrew Jackson (https://github.com/ceever)
+Copyright © 2020-2023 Andrew Jackson (https://github.com/ceever)
 
 This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
 
@@ -42,6 +42,9 @@ You should have received a copy of the GNU General Public License along with thi
 
 <p><img src="gfx/jpeg.png"></p>
 
+Progress window:
+<p><img src="gfx/progress.png"></p>
+
 ---
 **Send to:**<br/>
 
@@ -53,9 +56,16 @@ You should have received a copy of the GNU General Public License along with thi
 <p><img src="gfx/extract_here.png"></p>
 
 ---
-**BUGS & REQUESTS**
+**BUGS & REQUESTS:**
 
 Send me an email or open a ticket on github.
+
+---
+**UPDATES:**
+
+11.01.2023: Enhanced "rename_datetime.sh" with a progress window and changed rename.log to append mode
+
+30.12.2022: Added "Extract here" action
 
 ---
 **INSTALLATION:**
