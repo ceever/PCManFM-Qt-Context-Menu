@@ -4,8 +4,10 @@ n=0
 
 for fo in "$@"
 do
-	k=$(set -- `pdfinfo "$fo" | grep "Pages:"`; echo ${@: 2:1})
-	n=$((n+k))
-done
-
-zenity --info --text="Pages: $n"
+	if [ -f "$fo" ]
+	then
+		k=$(set -- `pdfinfo "$fo" | grep "Pages:"`; echo ${@: 2:1})
+		n=$((n+k))
+		echo "#Pages: $n"
+	fi
+done | zenity --progress --pulsate --title="Counting pages" --text="..."
