@@ -17,6 +17,10 @@ You should have received a copy of the GNU General Public License along with thi
 ---
 **SCREENSHOTS:**
 
+General progress window:
+<p><img src="gfx/progress.png"></p>
+
+---
 **PDF actions:**<br/>
 
 <p><img src="gfx/pdf.png"></p>
@@ -42,9 +46,6 @@ You should have received a copy of the GNU General Public License along with thi
 
 <p><img src="gfx/jpeg.png"></p>
 
-Progress window:
-<p><img src="gfx/progress.png"></p>
-
 ---
 **Send to:**<br/>
 
@@ -62,6 +63,8 @@ Send me an email or open a ticket on github.
 
 ---
 **UPDATES:**
+
+23.01.2023: Added a 'zenity' progress window to all PDF and image scripts, changed compact.log to append mode and added a fail catch to compact_jpeg in case 'convert' fail due to size limitations (it won't process panoramas beyond 25 MB or so)
 
 11.01.2023: Enhanced "rename_datetime.sh" with a progress window and changed rename.log to append mode
 
@@ -100,14 +103,14 @@ Restart PCManFM-Qt: killall -9 pcmanfm-qt
 
 For the specific scripts/context menu to work, they require the following apps/programs:
 
-* PDF: ps2pdf => **ghostscript**
-* PDF: gs => **ghostscript**
-* PDF: rotate => **pdftk**
+* PDF: ps2pdf => **ghostscript**, **zenity**
+* PDF: gs => **ghostscript**, **zenity**
+* PDF: rotate => **pdftk**, **zenity**
 * PDF: count => **zenity**, **poppler-utils**
 * Mount disk => **udisksctl**
 * Bulk rename => **python3**
-* JPEG (rename) => **zenity**, **python2**, **libimage-exiftool-perl**
-* JPEG (compact) => **imagemagick**
+* JPEG (rename) => **python2**, **libimage-exiftool-perl**, **zenity**
+* JPEG (compact) => **imagemagick**, **zenity**
 * Send to: Bluetooth => **blueman**
 * Send to: Email => **thunderbird**, **perl**
 * Send to: 7z archive => **p7zip-full**
