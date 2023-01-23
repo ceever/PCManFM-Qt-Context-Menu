@@ -15,7 +15,7 @@ do
 	else
 		if [[ -f "$fo" ]] || [[ -L "$fo" ]]
 		then
-			STRG="$STRG \"$fo\""
+			STRG="$STRG \"${fo//\"/\\\"}\""
 		fi
 	fi
 done
