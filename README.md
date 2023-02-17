@@ -186,16 +186,17 @@ If not yet installed on your system, install via:
 
 **Further reading:**
 * Another user providing useful actions on GitHub: https://github.com/stefonarch/custom-actions
+* A KDE user providing useful actions for the KDE environment: https://www.pling.com/p/998469
 * The *.desktop* file specification in general (limited and technical): https://specifications.freedesktop.org/desktop-entry-spec/latest/ and specifically https://specifications.freedesktop.org/desktop-entry-spec/latest/ar01s06.html
 * Comprehensive guide incl. the (sub)menu part (specs might be outdated): https://web.archive.org/web/20180628141112/http://www.nautilus-actions.org:80/?q=node/377
-* Context menus (aka custom actions) under LXQt: https://wiki.ubuntuusers.de/PCMan_File_Manager/Benutzerdefinierte_Aktionen/ (German)
-* The FileManager-Actions tool: https://gitlab.gnome.org/GNOME/filemanager-actions, https://wiki.ubuntuusers.de/FileManager-Actions/
-* How I discovered the convenient sub-menu option: http://bernaerts.dyndns.org/linux/76-gnome/344-nautilus-new-document-creation-menu/ or <a href="sups/bernaerts-nicolas.fr.html" target="_blank">index.html backup</a> (in case the original website is offline)
+* Context menus (aka custom actions) under LXQt: https://web.archive.org/web/20210615063643/https://wiki.ubuntuusers.de/PCMan_File_Manager/Benutzerdefinierte_Aktionen/ (German)
+* The FileManager-Actions tool: https://gitlab.gnome.org/GNOME/filemanager-actions, https://wiki.ubuntuusers.de/FileManager-Actions/ ([Archive.org](https://web.archive.org/web/20220928034313/https://wiki.ubuntuusers.de/FileManager-Actions/ "2022.09.28 03:43:13 ... https://web.archive.org/web/20220928034313/https://wiki.ubuntuusers.de/FileManager-Actions/"))
+* How I discovered the convenient sub-menu option: http://bernaerts.dyndns.org/linux/76-gnome/344-nautilus-new-document-creation-menu/ ([Backup](https://raw.githubusercontent.com/ceever/PCManFM-Qt-Context-Menu/main/sups/bernaerts-nicolas.fr.html "Download and open in browser"))
   
 **More examples:**
-* https://askubuntu.com/questions/444305/add-open-folder-as-root-to-pcman-file-managers-context-menu
+* https://askubuntu.com/questions/444305/add-open-folder-as-root-to-pcman-file-managers-context-menu ([Archive.org](https://web.archive.org/web/20210506162126/https://askubuntu.com/questions/444305/add-open-folder-as-root-to-pcman-file-managers-context-menu "2021.05.06 16:21:26 ... https://web.archive.org/web/20210506162126/https://askubuntu.com/questions/444305/add-open-folder-as-root-to-pcman-file-managers-context-menu"))
 * https://unix.stackexchange.com/questions/430705/add-custom-menu-action-to-caja-file-manager
-* https://wiki.manjaro.org/index.php/PCmanFM-Qt
-* https://www.linuxquestions.org/questions/bodhi-92/fresh-install-a-couple-of-issues-to-deal-with-4175563768/
-* http://cipricuslinux.blogspot.com/2015/06/add-open-folder-as-root-to-pcman-file.html
-* https://ubuntuplace.info/questions/344492/add-a-new-nautilus-context-menu-action-without-using-nautilus-actions (French)
+* https://wiki.manjaro.org/index.php/PCmanFM-Qt ([Archive.org](https://web.archive.org/web/20221204220322/https://wiki.manjaro.org/index.php/PCmanFM-Qt "2022.12.04 22:03:22 ... https://web.archive.org/web/20221204220322/https://wiki.manjaro.org/index.php/PCmanFM-Qt"))
+* https://www.linuxquestions.org/questions/bodhi-92/fresh-install-a-couple-of-issues-to-deal-with-4175563768/ ([Archive.org](https://web.archive.org/web/20201021021347/https://www.linuxquestions.org/questions/bodhi-92/fresh-install-a-couple-of-issues-to-deal-with-4175563768/ "2020.10.21 02:13:47 ... https://web.archive.org/web/20201021021347/https://www.linuxquestions.org/questions/bodhi-92/fresh-install-a-couple-of-issues-to-deal-with-4175563768/"))
+* http://cipricuslinux.blogspot.com/2015/06/add-open-folder-as-root-to-pcman-file.html ([Archive.org](https://web.archive.org/web/20191029081854/http://cipricuslinux.blogspot.com/2015/06/add-open-folder-as-root-to-pcman-file.html "2019.10.29 08:18:54 ... https://web.archive.org/web/20191029081854/http://cipricuslinux.blogspot.com/2015/06/add-open-folder-as-root-to-pcman-file.html"))
+* https://unix.stackexchange.com/questions/353610/add-a-new-nautilus-context-menu-action-without-using-nautilus-actions ([Archive.org](https://web.archive.org/web/20210506211723/https://unix.stackexchange.com/questions/353610/add-a-new-nautilus-context-menu-action-without-using-nautilus-actions "2021.05.06 21:17:23 ... https://web.archive.org/web/20210506211723/https://unix.stackexchange.com/questions/353610/add-a-new-nautilus-context-menu-action-without-using-nautilus-actions"))
