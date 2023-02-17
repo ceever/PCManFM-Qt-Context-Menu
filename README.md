@@ -57,12 +57,19 @@ General progress window:
 <p><img src="gfx/extract_here.png"></p>
 
 ---
+**Copy name (incl. folder path, bare name, etc. for single/multiple files):**<br/>
+
+<p><img src="gfx/copy_name.png"></p>
+
+---
 **BUGS & REQUESTS:**
 
 Send me an email or open a ticket on github.
 
 ---
 **UPDATES:**
+
+18.02.2023: Added "Copy name" (to clipboard) action to copy bare names, names with extension, folder paths, full paths and more for single or multiple files.
 
 23.01.2023: Added a 'zenity' progress window to all PDF and image scripts, changed compact.log to append mode and added a fail catch to compact_jpeg in case 'convert' fail due to size limitations (it won't process panoramas beyond 25 MB or so)
 
@@ -115,9 +122,10 @@ For the specific scripts/context menu to work, they require the following apps/p
 * Send to: Email => **thunderbird**, **perl**
 * Send to: 7z archive => **p7zip-full**
 * Extract here => **p7zip-full**, **zenity**
+* Copy name => **xclip**, **libnotify-bin**
 
 If not yet installed on your system, install via:
-<pre>sudo apt install ghostscript pdftk zenity poppler-utils udisksctl python3 python2 libimage-exiftool-perl imagemagick blueman thunderbird perl p7zip-full</pre>
+<pre>sudo apt install ghostscript pdftk zenity poppler-utils udisksctl python3 python2 libimage-exiftool-perl imagemagick blueman thunderbird perl p7zip-full xclip libnotify-bin</pre>
 
 ---
 **THE ACTIONS:**
@@ -174,6 +182,10 @@ If not yet installed on your system, install via:
 * It is quick and dirty, and does not support passwords.
 * It also has a 10 sec timeout (to act on a stuck 7z)—in case your archive is too large, this needs to be adjusted.
 * In case you are happy with the already existing "Extract here" of your file browser, you can exclude these cases by reducing the mimetypes in the action file.
+
+**Copy name (to clipboard)** (copy_name.sh and copy_name_plus.sh):
+* Single file: Copy the bare filename, name and extension, folder path, full path, as well as the 1st word, 2nd word, 3rd word, or last word of the bare filename, to the clipboard. Some consessions are made for hidden files with "." at the beginning.
+* Multiple files: Copy the list of bare filenames, name and extensions, or full paths of the selected files to the clipboard. The latter ist particularly useful because the file manager itself adds "file://" to the names when using CTRL-C.
 
 ---
 **Can I use these actions to modify the context menu on the LXQt Desktop?**
