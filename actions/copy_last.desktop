@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Action
+TargetToolbar=true
+ToolbarLabel=Copy last word
+Name=Copy last word
+Icon=edit-select-all
+Profiles=foobar;
+
+[X-Action-Profile foobar]
+Exec=/usr/share/file-manager/scripts/copy_name.sh last %F
+SelectionCount==1

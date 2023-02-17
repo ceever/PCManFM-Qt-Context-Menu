@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Action
+TargetToolbar=true
+ToolbarLabel=Copy name
+Name=Copy name
+Icon=edit-select-all
+Profiles=foobar;
+
+[X-Action-Profile foobar]
+Exec=/usr/share/file-manager/scripts/copy_name.sh name %F
+SelectionCount==1

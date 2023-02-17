@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Action
+TargetToolbar=true
+ToolbarLabel=Copy 2nd word
+Name=Copy 2nd word
+Icon=edit-select-all
+Profiles=foobar;
+
+[X-Action-Profile foobar]
+Exec=/usr/share/file-manager/scripts/copy_name.sh 2nd %F
+SelectionCount==1
