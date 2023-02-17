@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Action
+TargetToolbar=true
+ToolbarLabel=Copy names
+Name=Copy names
+Icon=edit-select-all
+Profiles=foobar;
+
+[X-Action-Profile foobar]
+Exec=/home/aj/.local/share/file-manager/copy_name_plus.sh /./ %F
+SelectionCount=>1

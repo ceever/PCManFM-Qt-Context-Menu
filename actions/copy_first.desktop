@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Action
+TargetToolbar=true
+ToolbarLabel=Copy 1st word
+Name=Copy 1st word
+Icon=edit-select-all
+Profiles=foobar;
+
+[X-Action-Profile foobar]
+Exec=/home/aj/.local/share/file-manager/copy_name.sh 1st %F
+SelectionCount==1
