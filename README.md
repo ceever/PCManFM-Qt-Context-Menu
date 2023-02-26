@@ -69,6 +69,8 @@ Send me an email or open a ticket on github.
 ---
 **UPDATES:**
 
+26.02.2023: Upgraded picture datetime rename scripts to Python 3
+
 18.02.2023: Added "Copy name" (to clipboard) action to copy bare names, names with extension, folder paths, full paths and more for single or multiple files.
 
 23.01.2023: Added a 'zenity' progress window to all PDF and image scripts, changed compact.log to append mode and added a fail catch to compact_jpeg in case 'convert' fail due to size limitations (it won't process panoramas beyond 25 MB or so)
@@ -116,7 +118,7 @@ For the specific scripts/context menu to work, they require the following apps/p
 * PDF: count => **zenity**, **poppler-utils**
 * Mount disk => **udisksctl**
 * Bulk rename => **python3**
-* JPEG (rename) => **python2**, **libimage-exiftool-perl**, **zenity**
+* JPEG (rename) => **python3**, **libimage-exiftool-perl**, **zenity**
 * JPEG (compact) => **imagemagick**, **zenity**
 * Send to: Bluetooth => **blueman**
 * Send to: Email => **thunderbird**, **perl**
@@ -125,7 +127,7 @@ For the specific scripts/context menu to work, they require the following apps/p
 * Copy name => **xclip**, **libnotify-bin**
 
 If not yet installed on your system, install via:
-<pre>sudo apt install ghostscript pdftk zenity poppler-utils udisksctl python3 python2 libimage-exiftool-perl imagemagick blueman thunderbird perl p7zip-full xclip libnotify-bin</pre>
+<pre>sudo apt install ghostscript pdftk zenity poppler-utils udisksctl python3 libimage-exiftool-perl imagemagick blueman thunderbird perl p7zip-full xclip libnotify-bin</pre>
 
 ---
 **THE ACTIONS:**
