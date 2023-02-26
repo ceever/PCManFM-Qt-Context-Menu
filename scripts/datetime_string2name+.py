@@ -1,3 +1,5 @@
+#!/bin/env python3
+
 from datetime import datetime, timedelta
 import sys, re
 
@@ -12,4 +14,4 @@ except:
 
 strg = re.findall('([0-9]+:[0-9]+:[0-9]+ [0-9]+:[0-9]+:[0-9]+)', sys.stdin.read(), re.DOTALL)[0]
 
-print (datetime.strptime(strg.strip(), '%Y:%m:%d %H:%M:%S') + timedelta(hours=delta_hours)).strftime('%Y%m%d_%H%M%S')
+print( (datetime.strptime(strg.strip(), '%Y:%m:%d %H:%M:%S') + timedelta(hours=delta_hours)).strftime('%Y%m%d_%H%M%S') )

@@ -26,7 +26,7 @@ for fo in "$@"
 do
 	if [ -f "$fo" ]
 	then
-		echo "#$(basename "$fo")" && sleep 0.1
+		echo "#$(basename "$fo")" | sed 'y/ /+/'
 		STRG=`exiftool "$fo" | grep "$ORIG_SEARCH"`
 		if [ -z "$STRG" ]
 		then
@@ -49,8 +49,8 @@ do
 		
 		if [ -n "$STRG" ]
 		then
-			NAME1=`echo $STRG | python2 "$SDIR/datetime_string2name+.py" $SHIFT`.$EXT
-			NAME2=`echo $STRG | python2 "$SDIR/datetime_string2name+.py" $(bc <<< "scale=6; $SHIFT+0.00028")`.$EXT
+			NAME1=`echo $STRG | python3 "$SDIR/datetime_string2name+.py" $SHIFT`.$EXT
+			NAME2=`echo $STRG | python3 "$SDIR/datetime_string2name+.py" $(bc <<< "scale=6; $SHIFT+0.00028")`.$EXT
 		else
 			NAME1=
 			NAME2=
