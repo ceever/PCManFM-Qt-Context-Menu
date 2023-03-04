@@ -52,7 +52,7 @@ General progress window:
 <p><img src="gfx/sendto.png"></p>
 
 ---
-**Exract here (WinRAR-like, quick & dirty) and error message in case of failure:**
+**Exract here (WinRAR-like, quick & dirty) and error message in case of failure:**<br/>
 
 <p><img src="gfx/extract.png"></p>
 <p><img src="gfx/extract_here.png"></p>
