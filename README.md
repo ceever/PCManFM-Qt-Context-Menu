@@ -52,8 +52,10 @@ General progress window:
 <p><img src="gfx/sendto.png"></p>
 
 ---
-**Exract here (quick & dirty). Error message in case of failure:**<br/>
+**Exract here (WinRAR-like, quick & dirty)**<br/>
+<p><img src="gfx/extract.png"></p>
 
+**Error message in case of failure:**
 <p><img src="gfx/extract_here.png"></p>
 
 ---
@@ -68,6 +70,8 @@ Send me an email or open a ticket on github.
 
 ---
 **UPDATES:**
+
+04.03.2023: Enhanced extract with "... here" and "... subfolder" menu.
 
 26.02.2023: Upgraded picture datetime rename scripts to Python 3
 
@@ -180,10 +184,10 @@ If not yet installed on your system, install via:
 
 **Extract here** (extract_here.sh):
 * Since LXQt does not support the "Extract here" option for all kinds of types of archives.
-* This extracts extracts everything 7z (command line) supports.
+* This extracts everything 7z (command line) supports.
 * It is quick and dirty, and does not support passwords.
 * It also has a 10 sec timeout (to act on a stuck 7z)—in case your archive is too large, this needs to be adjusted.
-* In case you are happy with the already existing "Extract here" of your file browser, you can exclude these cases by reducing the mimetypes in the action file.
+* In case you are happy with the already existing "Extract here" of your file browser, you can exclude these cases by reducing the mimetypes in the action file here.
 
 **Copy name (to clipboard)** (copy_name.sh and copy_name_plus.sh):
 * Single file: Copy the bare filename, name and extension, folder path, full path, as well as the 1st word, 2nd word, 3rd word, or last word of the bare filename, to the clipboard. Some consessions are made for hidden files with "." at the beginning.
