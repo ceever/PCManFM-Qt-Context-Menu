@@ -42,9 +42,17 @@ General progress window:
 <p><img src="gfx/bulk_rename.png"></p>
 
 ---
-**Image actions (rename (EXIF: 'Date/Time Original'), compress and resize&strip):**<br/>
+**Image / video actions:**
+1. EXIF information
+2. compact (to 96%)
+3. rename (based on EXIF: 'Date/Time Original')
+4. resize ½ & strip (EXIF)<br/>
 
 <p><img src="gfx/jpeg.png"></p>
+
+The EXIF information windows:
+
+<p><img src="gfx/exif_info.png"></p>
 
 ---
 **Send to:**<br/>
@@ -69,6 +77,8 @@ Send me an email or open a ticket on github.
 
 ---
 **UPDATES:**
+
+31.03.2023: Added "EXIF information" option for image / video menu
 
 04.03.2023: Enhanced extract with "... here" and "... subfolder" menu.
 
@@ -121,8 +131,10 @@ For the specific scripts/context menu to work, they require the following apps/p
 * PDF: count => **zenity**, **poppler-utils**
 * Mount disk => **udisksctl**
 * Bulk rename => **python3**
+* JPEG (EXIF informtion) => **exiftool**, **zenity**
 * JPEG (rename) => **python3**, **libimage-exiftool-perl**, **zenity**
 * JPEG (compact) => **imagemagick**, **zenity**
+* JPEG (resize) => **imagemagick**, **zenity**
 * Send to: Bluetooth => **blueman**
 * Send to: Email => **thunderbird**, **perl**
 * Send to: 7z archive => **p7zip-full**
@@ -155,24 +167,26 @@ If not yet installed on your system, install via:
 * The original can be found here: https://github.com/trhura/nautilus-renamer or https://launchpad.net/nautilus-renamer/+download
 * I slightly modified it to have an "Overwrite" option included and for the file handling to work, which fails with the original code and *.desktop* files and the passed file list (%U, %F, etc.).
 
-**"Image ..."/menu_image.desktop:**
-* The code is probably not perfect (especially relying on python), but it has worked for me now and I was too lazy to adjust it.
-* Either script creates *rename.log' and/or *compact.log* while executing. Check the created *tmp* folder to see if it has finished and now new files get created.
+**"Image / video ..."/menu_image.desktop:**
+
+*exif_info.sh*:
+* Exracts the EXIF information of a image or video and shows it in a copyable windows.
 
 *rename_datetime.sh*:
-* It creates *tmp* and *missing* subfolders, where it copies the files with new name or with old name if the relevant EXIF tag is missing, respectively.
+* The code is probably not perfect (especially relying on python), but it has worked for me until now and I was too lazy to adjust it.
+* It creates *tmp* and *missing* subfolders, where it copies the files with new name, or with the old name if the relevant EXIF tag is missing, respectively. Also, creates a *rename.log*.
 * It requires the *datetime_string2name+.py* Python script.
 * **It supports time delay** for you to adjust mismatched datetime meta data.
-* **It also supports video files** if *exiftool* can find relevant meta information - most videos from smartphones include such EXIF (like) tag. If the default EXIF key (*Date/Time Original*) is not found, the script will ask you to provide an alternative from what it found in the relevant file.
+* **It also supports video files** if *exiftool* can find relevant meta information—most videos from smartphones include such EXIF (like) tag. If the default EXIF key (*Date/Time Original*) is not found, the script will ask you to provide an alternative from what it found in the relevant file.
 
 *compact_jpeg.sh*:
-* It compacts JPEGs to 96% quality, using *convert* of the imagemagick graphic package.
-* It creates *tmp* subfolder, where it copies (only) those JPEGs that decreased in size (5% threshold).
-* You can adjust the quality setting and keep-threshold in the script.
-* After the script has finished, just move the newly created JPEGs one level higher to overwrite the original files - the original file name is kept.
+* It compacts JPEGs to 96% quality, using *convert* of the imagemagick graphic package, but only keeps the file if the decrease in size is above a certain threshold (+5%). 
+* It creates *tmp* subfolder, where it copies those JPEGs. Also, creates a *compact.log*.
+* You can adjust the quality setting and the keep-threshold in the script.
+* After the script has finished, just move the newly created JPEGs one level higher to overwrite the original files—the original file name is kept.
 
 *resize_image.sh*:
-* It creates a new image of half the original's resolution and strips the EXIF (and probably other) meta data.
+* It creates a new image of half the original's resolution and strips the EXIF information (and probably other).
 * This is advantageous in case you want to share the file with strangers or data leeches. This should probably be extended by an arbitrary file name option.
 
 **"Send to ..."/menu_send.desktop:**
