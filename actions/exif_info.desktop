@@ -7,7 +7,7 @@ Icon=exifinfo
 Profiles=foo;
 
 [X-Action-Profile foo]
-Exec=/home/aj/.local/share/file-manager/exif_info.sh %f
+Exec=/usr/share/file-manager/scripts/exif_info.sh %f
 Schemes=file;
-MimeTypes=image/*;video/*;
+MimeTypes=image/*;video/*;audio/*;
 SelectionCount==1
