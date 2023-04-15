@@ -78,6 +78,8 @@ Send me an email or open a ticket on github.
 ---
 **UPDATES:**
 
+15.04.2023: Added audio mimetype to "EXIF information" for mp3s, etc.
+
 31.03.2023: Added "EXIF information" option for image / video menu
 
 04.03.2023: Enhanced extract with "... here" and "... subfolder" menu.
@@ -170,7 +172,7 @@ If not yet installed on your system, install via:
 **"Image / video ..."/menu_image.desktop:**
 
 *exif_info.sh*:
-* Exracts the EXIF information of a image or video and shows it in a copyable windows.
+* Exracts the EXIF information of a image, video or audio file, and shows it in a copyable windows.
 
 *rename_datetime.sh*:
 * The code is probably not perfect (especially relying on python), but it has worked for me until now and I was too lazy to adjust it.
