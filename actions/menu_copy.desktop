@@ -1,6 +1,0 @@
-[Desktop Entry]
-Type=Menu
-Icon=menu-editor
-Name[C]=Copy ...
-Tooltip[C]=Copy ...
-ItemsList=copy_name;copy_nameext;copy_folder;copy_path;space;copy_first;copy_second;copy_third;copy_last;

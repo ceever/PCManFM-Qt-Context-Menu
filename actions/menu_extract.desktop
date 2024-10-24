@@ -1,6 +1,0 @@
-[Desktop Entry]
-Type=Menu
-Icon=extract-archive
-Name[C]=Extract ...
-Tooltip[C]=Extract ...
-ItemsList=extract_here;extract_folder;

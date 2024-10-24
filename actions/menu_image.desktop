@@ -1,6 +1,0 @@
-[Desktop Entry]
-Type=Menu
-Icon=image-jpeg
-Name[C]=Image / video ...
-Tooltip[C]=Image / video ...
-ItemsList=exif_info;compact_jpeg;rename_datetime;resize_image;

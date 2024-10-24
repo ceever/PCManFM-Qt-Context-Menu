@@ -1,9 +1,0 @@
-[Desktop Entry]
-Type=Action
-TargetToolbar=true
-ToolbarLabel=
-Name=
-Profiles=foobar;
-
-[X-Action-Profile foobar]
-SelectionCount==1
